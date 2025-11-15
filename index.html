@@ -30,6 +30,18 @@
         });
     </script>
 
+    <p id="counter"></p>
+
+    <script>
+    fetch("https://anisan-productions-website-backend.onrender.com/")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("counter").textContent =
+          data.visits + " persons have visited this site!";
+      });
+    </script>
+
+
 </body>
 
 </html>
