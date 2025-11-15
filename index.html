@@ -1,40 +1,32 @@
-<!-- ESTO ES SOLO UN EJEMPLO-, LO COPIÉ NO VALE :(-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>AniSan Productions</title>
 </head>
 <body>
-  <header>
-    <h1>h1 header/Myh preescence in the internet</h1>
-    <p>p text</p>
-  </header>
+    <img id="language-image" src="default-image.jpg" alt="Language Specific Image">
 
-  <main>
-    <section>
-      <h2>h2 text</h2>
-      <ul>
-        <li><a href="#">a href link</a></li>
-        <li><a href="#">a href link 2</a></li>
-        <li><a href="#">a href link 3</a></li>
-      </ul>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // 1. Get the user's preferred language. navigator.languages is for modern browsers,
+            //    navigator.language is a widely supported fallback.
+            const userLanguage = navigator.languages ? navigator.languages[0] : navigator.language;
+            // 2. Extract the two-letter language code (e.g., 'en-US' becomes 'en').
+            const langCode = userLanguage.substring(0, 2).toLowerCase();
+            // 3. Get the image element by its ID.
+            const imageElement = document.getElementById('language-image');
+            // 4. Define the image source based on the language.
+            let imageSrc = 'english-image.jpg'; // Default to English image
+            if (langCode === 'es') {
+                imageSrc = 'spanish-image.jpg';
+            } else if (langCode === 'en') {
+                imageSrc = 'english-image.jpg';
+            }
+            // 5. Update the image source.
+            imageElement.src = imageSrc;
+        });
+    </script>
 
-    <section>
-      <h2>h2 about me section</h2>
-      <p>p text</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>footer</p>
-  </footer>
 </body>
 </html>
-
-
