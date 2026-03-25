@@ -2,17 +2,59 @@
 <html lang="en">
     <head>
         <title>AniSan Productions</title>
-        <link rel="icon" type="image/x-icon" href="truewhat.ico">
+
+        <style>
+
+            body {
+                background-image: url("tmp_vintage.mp4");
+            }
+
+            body {
+                margin: 0; /* Removes default browser padding/margins */
+            }
+
+            .main-header {
+                height: 100px;
+                /* This sets the image 'inside' the background of this specific box */
+                background-image: url("header-image.jpg"); 
+                background-size: cover;
+                background-position: center;
+    
+                /* Centering the text inside */
+                display: flex;
+                align-items: left;
+                justify-content: left;
+            }
+
+            .header-image {
+                width: 200%;           /* Makes the image span the full width of the site */
+                height: auto;          /* Maintains the aspect ratio so it doesn't look stretched */
+                display: block;        /* Removes the tiny gap often found at the bottom of images */
+                max-height: 100px;     /* Optional: prevents the header from being too tall */
+                object-fit: cover;     /* Crops the image intelligently if you set a fixed height */
+            }
+
+        </style>
+
     </head>
     <body>
-        <ul>
-            <li><a href="https://anisanproductions.com/">Home</a></li>
+        <header class="main-header">
+            <a href="https://anisanproductions.com">
+                <img src="anisangifbanner.gif" alt="Home" class="header-image">
+            </a>
+        </header>
+
+
+        <ul id="links">
             <li><a href="https://anisanproductions.com/napowrimo/index.html">Napowrimo 2026</a></li>
             <li><a href="https://youtube.com/@AniSanProductions">YouTube</a></li>
             <li><a href="https://www.wattpad.com/user/ZephyrParahoy">Wattpad</a></li>
+            <li><a href="https://anisanproductions.com/contact.html">Contact</a></li>
         </ul>
-        <h1 style="font-family: 'Baskerville Old Face', serif;">AniSan Productions</h1>
-        <p>hi this is my website</p>
+        <section id="presentation">
+            <p>Hello! This is my website :></p>
+        </section>
+        
     </body>
 </html>
 
