@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+// Import your universal Navbar component
+import Navbar from '../components/Navbar.astro'; 
+
+// 1. Get ALL projects from the folder
+const allProjects = await getCollection('projects');
+
+// 2. Filter them! Only keep the ones where status is "current"
+const currentProjects = allProjects.filter((project) => project.data.status === 'current');
+---
+
+<html lang="en">
+  <head>
+    <title>Current Projects - AniSan Productions</title>
+  </head>
+  <body>
+    <Navbar />
+    
+    <h1>Currently Working On...</h1>
+    
+    <div class="project-grid">
+      {currentProjects.map((project) => (
+        <div class="card">
+          <h2>{project.data.title}</h2>
+          <p>Interest: {project.data.mainInterest}</p>
+          <p>{project.data.description}</p>
+          
+          <a href={`/${project.data.mainInterest}/${project.slug}`}>View Project</a>
+        </div>
+      ))}
+    </div>
+  </body>
+</html>

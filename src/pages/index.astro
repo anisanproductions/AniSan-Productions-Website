@@ -1,0 +1,89 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import banner from '../assets/banner.png';
+import picture from '../assets/picture.png';
+---
+
+<MainLayout>
+
+    <!-- HERO -->
+    <div class="hero">
+        <img src={banner.src} class="banner">
+
+        <div class="hero-text">
+            <div class="small">welcome home 💫</div>
+            <div class="big"></div>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <img src={picture.src} class="main-image">
+
+        <div class="text">
+            <p>Hello there...! HEY, COME BACK HERE</p>
+            <p>
+                Hi, I am AniSan, and this is AniSan Productions, my personal website!
+                Here I will be posting all the stuff and projects I am doing,
+                like animations, writings, songs, and a lot more!
+            </p>
+        </div>
+    </div>
+
+</MainLayout>
+
+<style>
+.hero {
+    position: relative;
+    margin-top: 10px;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-text .small {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.hero-text .big {
+    font-size: 42px;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.main-image {
+    width: 450px;
+    border: 8px solid #cfcfcf;
+}
+
+.text {
+    max-width: 500px;
+    color: white;
+    font-size: 24px;
+}
+
+
+</style>
+
+
+
+
+

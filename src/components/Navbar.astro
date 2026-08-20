@@ -1,0 +1,72 @@
+---
+import logo from '../assets/logo.png';
+
+import home from '../assets/home.png';
+import projects from '../assets/projects.png';
+import blog from '../assets/blog.png';
+
+import youtube from '../assets/youtube.png';
+import wattpad from '../assets/wattpad.png';
+import soundcloud from '../assets/soundcloud.png';
+import itchio from '../assets/itchio.png';
+---
+
+<div class="navbar">
+    <a href="/">
+        <img src={logo.src} class="logo">
+    </a>
+
+    <div class="menu">
+        <a href="/"><img src={home.src}></a>
+        <a href="/projects"><img src={projects.src}></a>
+        <a href="/blog"><img src={blog.src}></a>
+    </div>
+
+    <div class="icons">
+        <a href="https://www.youtube.com/@AniSanProductions">
+            <img src={youtube.src}>
+        </a>
+        <a href="#"><img src={wattpad.src}></a>
+        <a href="#"><img src={soundcloud.src}></a>
+        <a href="#"><img src={itchio.src}></a>
+    </div>
+</div>
+
+
+<style>
+/* NAVBAR styles stay here OR move to Navbar later */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+/* LEFT (logo) */
+.logo {
+    height: 120px;
+}
+
+/* CENTER (menu) */
+.menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu img {
+    height: 60px;
+}
+
+/* RIGHT (social icons) */
+.icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icons img {
+    height: 50px;
+    display: block;
+}
+</style>
