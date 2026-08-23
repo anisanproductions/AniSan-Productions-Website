@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar.astro';
 import bg from '../assets/truebackground.png';
 import font from '../assets/Anisanfonttest3-Regular.woff2';
+import favicon from '../assets/truewhat.ico';
 ---
 
 <html lang="en">
@@ -9,7 +10,7 @@ import font from '../assets/Anisanfonttest3-Regular.woff2';
     <meta charset="UTF-8">
     <title>AniSan Productions</title>
 
-    <link rel="icon" href="/truewhat.ico">
+    <link rel="icon" href={favicon}>
 </head>
 
 <body style={`background-image: url(${bg.src});`}>
@@ -22,7 +23,7 @@ import font from '../assets/Anisanfonttest3-Regular.woff2';
 <style>
 @font-face {
     font-family: 'AniSanFont';
-    src: url('${font}') format('woff2');
+    src: url('../assets/Anisanfonttest3-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
