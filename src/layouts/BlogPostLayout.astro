@@ -1,0 +1,39 @@
+---
+import SiteLayout from './MainLayout.astro';
+
+const {
+  title,
+  description,
+  date,
+  tags,
+  image,
+} = Astro.props;
+---
+
+<SiteLayout title={title}>
+
+  <article>
+
+    <h1>{title}</h1>
+
+    <p>{description}</p>
+
+    <time>{date.toLocaleDateString()}</time>
+
+    {image && (
+      <img src={image} alt="" />
+    )}
+
+    <div>
+      {tags.map(tag => (
+        <span>{tag}</span>
+      ))}
+    </div>
+
+    <div class="post-content">
+      <slot />
+    </div>
+
+  </article>
+
+</SiteLayout>

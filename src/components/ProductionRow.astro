@@ -1,0 +1,32 @@
+---
+
+import InterestIcon from "../components/InterestIcon.astro"
+
+const { production } = Astro.props;
+---
+
+<InterestIcon interest={production.data.mainInterests[0]} />
+
+<span>
+  {production.data.date.toLocaleDateString()}
+</span>
+
+<a href={`/${production.data.type}s`}>
+  ({production.data.type})
+</a>
+
+<a href={production.data.url}>
+  {production.data.title}
+</a>
+
+<span>
+  ({production.data.status})
+</span>
+
+{
+  production.data.secondaryInterests.map(
+    interest => (
+      <InterestIcon interest={interest} />
+    )
+  )
+}

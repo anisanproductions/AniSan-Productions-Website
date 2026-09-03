@@ -1,0 +1,92 @@
+---
+const {interest} = Astro.props;
+
+import animationIcon from '../assets/icons/animation.png';
+import programmingIcon from '../assets/icons/programming.png';
+import blenderIcon from '../assets/icons/blender.png';
+import drawingIcon from '../assets/icons/drawing.png';
+import writingIcon from '../assets/icons/writing.png';
+import poetryIcon from '../assets/icons/poetry.png';
+import englishIcon from '../assets/icons/english.png';
+import violinIcon from '../assets/icons/violin.png';
+import pianoIcon from '../assets/icons/piano.png';
+import compositionIcon from '../assets/icons/composition.png';
+import editingIcon from '../assets/icons/editing.png';
+
+
+
+const interestData = {
+  animation: {
+    name: 'Animation',
+    icon: animationIcon,
+    url: '/interests/animacion',
+  },
+
+  programming: {
+    name: 'Programming',
+    icon: programmingIcon,
+    url: '/interests/programacion',
+  },
+
+  blender: {
+    name: 'Blender',
+    icon: blenderIcon,
+    url: '/interests/blender',
+  },
+
+  drawing: {
+    name: 'Drawing',
+    icon: drawingIcon,
+    url: '/interests/dibujo',
+  },
+
+  writing: {
+    name: 'Writing',
+    icon: writingIcon,
+    url: '/interests/escritura',
+  },
+
+  poetry: {
+    name: 'Poetry',
+    icon: poetryIcon,
+    url: '/interests/poesia',
+  },
+
+  english: {
+    name: 'English',
+    icon: englishIcon,
+    url: '/interests/ingles',
+  },
+
+  violin: {
+    name: 'Violin',
+    icon: violinIcon,
+    url: '/interests/violin',
+  },
+
+  piano: {
+    name: 'Piano',
+    icon: pianoIcon,
+    url: '/interests/piano',
+  },
+
+  composition: {
+    name: 'Composition',
+    icon: compositionIcon,
+    url: '/interests/composicion',
+  },
+
+  editing: {
+    name: 'Editing',
+    icon: editingIcon,
+    url: '/interests/edicion',
+  },
+};
+---
+
+<a href={interestData[{interest}].url}>
+  <img
+    src={interestData[{interest}].icon.src}
+    alt={interestData[{interest}].name}
+  />
+</a>

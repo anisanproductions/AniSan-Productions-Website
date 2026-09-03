@@ -1,0 +1,45 @@
+.hero {
+    position: relative;
+    margin-top: 10px;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-text .small {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.hero-text .big {
+    font-size: 42px;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.main-image {
+    width: 450px;
+    border: 8px solid #cfcfcf;
+}
+
+.text {
+    max-width: 500px;
+    color: white;
+    font-size: 24px;
+}

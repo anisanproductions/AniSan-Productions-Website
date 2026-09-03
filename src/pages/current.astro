@@ -1,34 +1,87 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import banner from '../assets/banners/currentthingsbanner.png';
+
 import { getCollection } from 'astro:content';
-// Import your universal Navbar component
-import Navbar from '../components/Navbar.astro'; 
 
-// 1. Get ALL projects from the folder
-const allProjects = await getCollection('projects');
+const productions = await getCollection('productions');
 
-// 2. Filter them! Only keep the ones where status is "current"
-const currentProjects = allProjects.filter((project) => project.data.status === 'current');
+const currentThings = productions.filter(
+  production => production.data.status === 'current'
+);
+
 ---
 
-<html lang="en">
-  <head>
-    <title>Current Projects - AniSan Productions</title>
-  </head>
-  <body>
-    <Navbar />
-    
-    <h1>Currently Working On...</h1>
-    
-    <div class="project-grid">
-      {currentProjects.map((project) => (
-        <div class="card">
-          <h2>{project.data.title}</h2>
-          <p>Interest: {project.data.mainInterest}</p>
-          <p>{project.data.description}</p>
-          
-          <a href={`/${project.data.mainInterest}/${project.slug}`}>View Project</a>
-        </div>
-      ))}
+<MainLayout title="AniSan Productions | Current Things">
+
+    <!-- HERO -->
+    <div class="hero">
+        <img src={banner.src} class="banner">
     </div>
-  </body>
-</html>
+
+
+</MainLayout>
+
+<style>
+
+.hero {
+    position: relative;
+    margin-top: 10px;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-text .small {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.hero-text .big {
+    font-size: 42px;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.main-image {
+    width: 450px;
+    border: 8px solid #cfcfcf;
+}
+
+.text {
+    max-width: 500px;
+    color: white;
+    font-size: 24px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center; /* Centers the whole row */
+  align-items: center;
+  gap: 10px;               /* Adds equal spacing between each image */
+  margin-top: 40px;        /* Pushes the row down from the hero banner */
+  padding: 0 20px;         /* Prevents images from touching screen edges */
+}
+
+.image-row img {
+  width: 100%;
+  height: auto;
+}
+</style>

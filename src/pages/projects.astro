@@ -1,17 +1,35 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-import banner from '../assets/banners/allproductionsbanner.png';
+import banner from '../assets/banners/projectsbanner.png';
 
+import current from '../assets/button-images/projects-currentthings.png';
+import future from '../assets/button-images/projects-futurethings.png';
+import interests from '../assets/button-images/projects-interests.png';
+import listall from '../assets/button-images/projects-listall.png';
+import artifacts from '../assets/button-images/projects-artifacts.png';
 ---
 
-<MainLayout title="AniSan Productions | All Productions">
+<MainLayout title="AniSan Productions | Projects">
 
     <!-- HERO -->
     <div class="hero">
         <img src={banner.src} class="banner">
+
+        <div class="hero-text">
+            <div class="small">Sorted by:</div>
+            <div class="big"></div>
+        </div>
     </div>
 
+    <!-- CONTENT -->
+    <div class="image-row">
+        <a href="/current"><img src={current.src} alt="Image 1"></a>
+        <a href="/future"><img src={future.src} alt="Image 2"></a>
+        <a href="/interests"><img src={interests.src} alt="Image 3"></a>
+        <a href="/all-productions"><img src={listall.src} alt="Image 4"></a>
+        <a href="/artifacts"><img src={artifacts.src} alt="Image 5"></a>
+    </div>
 
 </MainLayout>
 
@@ -76,4 +94,6 @@ import banner from '../assets/banners/allproductionsbanner.png';
   width: 100%;
   height: auto;
 }
+
+
 </style>

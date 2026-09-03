@@ -1,14 +1,16 @@
 ---
 import Navbar from '../components/Navbar.astro';
-import bg from '../assets/truebackground.png';
-import font from '../assets/Anisanfonttest3-Regular.woff2';
+import bg from '../assets/backgrounds/truebackground.png';
+import font from '../assets/fonts/Anisanfonttest3-Regular.woff2';
 import favicon from '../assets/truewhat.ico';
+import Footer from '../components/Footer.astro';
+const { title } = Astro.props;
 ---
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AniSan Productions</title>
+    <title>{title}</title>
 
     <link rel="icon" href={favicon}>
 </head>
@@ -18,18 +20,23 @@ import favicon from '../assets/truewhat.ico';
         <Navbar />
         <slot />
     </div>
+
+    <Footer />
 </body>
+
+
 
 <style>
 @font-face {
     font-family: 'AniSanFont';
-    src: url('../assets/Anisanfonttest3-Regular.woff2') format('woff2');
+    src: url('../assets/fonts/Anisanfonttest3-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     margin: 0;
+    background-image: url('../assets/backgrounds/truebackground.png');
     background-repeat: repeat;
     background-size: auto;
     font-family: 'AniSanFont';
@@ -44,3 +51,4 @@ body {
 
 
 </style>
+

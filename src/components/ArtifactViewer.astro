@@ -1,0 +1,29 @@
+---
+const { file, fileType } = Astro.props;
+---
+
+{fileType === 'image' && (
+  <img src={file} alt="" />
+)}
+
+{fileType === 'audio' && (
+  <audio controls>
+    <source src={file} />
+  </audio>
+)}
+
+{fileType === 'video' && (
+  <video controls>
+    <source src={file} />
+  </video>
+)}
+
+{fileType === 'pdf' && (
+  <iframe src={file}></iframe>
+)}
+
+{fileType === 'zip' && (
+  <a href={file} download>
+    Download
+  </a>
+)}

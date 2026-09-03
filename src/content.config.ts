@@ -1,49 +1,74 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-const projectsCollection = defineCollection({
+const productions = defineCollection({
   loader: glob({
-    pattern: '**/*.{md,mdx}',
-    base: './src/content/projects',
+    pattern: '**/*.md',
+    base: './src/content/productions',
   }),
 
   schema: z.object({
     title: z.string(),
 
-    status: z.enum([
-      'current',
-      'future',
-      'completed',
-      'cancelled',
-      'paused',
+    description: z.string().optional(),
+
+    date: z.string(),
+
+    type: z.enum([
+      "project",
+      "artifact",
     ]),
 
-    type: z.enum(['project', 'artifact']),
+    status: z.enum([
+      "finished",
+      "current",
+      "future",
+      "cancelled",
+      "paused",
+    ]),
 
-    mainInterest: z.string(),
-    secondaryInterests: z.array(z.string()).default([]),
+    mainInterests: z.array(
+      z.string()
+    ).min(1),
 
-    description: z.string(),
+    secondaryInterests: z.array(
+      z.string().optional()
+    ).default([]),
+
+    url: z.string(),
+
+    file: z.string().optional(),
+
     thumbnail: z.string().optional(),
 
-    links: z.object({
-      website: z.string().url().optional(),
-      social: z.string().url().optional(),
-    }).optional(),
-
-    platform: z.string().optional(),
-
-    content: z.object({
-      blogTags: z.array(z.string()).default([]),
-    }).optional(),
-
-    files: z.object({
-      attachment: z.string().optional(),
-      collection: z.string().optional(),
-    }).optional(),
+    project: z.string().optional(),
   }),
 });
 
+
+const blog = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/blog',
+  }),
+
+  schema: z.object({
+    title: z.string(),
+
+    description: z.string(),
+
+    date: z.string(),
+
+    tags: z.array(
+      z.string()
+    ),
+
+    image: z.string().optional(),
+  }),
+});
+
+
 export const collections = {
-  projects: projectsCollection,
+  productions,
+  blog,
 };

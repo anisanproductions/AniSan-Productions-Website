@@ -1,11 +1,19 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-import banner from '../assets/banners/allproductionsbanner.png';
+import banner from '../assets/banners/artifactsbanner.png';
+
+import { getCollection } from 'astro:content';
+
+const productions = await getCollection('productions');
+
+const currentThings = productions.filter(
+  production => production.data.type === 'artifact'
+);
 
 ---
 
-<MainLayout title="AniSan Productions | All Productions">
+<MainLayout title="AniSan Productions | Artifacts">
 
     <!-- HERO -->
     <div class="hero">
