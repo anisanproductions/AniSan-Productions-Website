@@ -8,6 +8,9 @@ import ProductionRow from '../components/ProductionRow.astro';
 
 const productions = await getCollection('productions');
 
+const allproductions = productions
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
 ---
 
 <MainLayout title="AniSan Productions | All Productions">
@@ -19,7 +22,7 @@ const productions = await getCollection('productions');
 
 
     <div class="productions-list">
-        {productions.map(production => (
+        {allproductions.map(production => (
         <ProductionRow production={production} />
         ))}
     </div>
