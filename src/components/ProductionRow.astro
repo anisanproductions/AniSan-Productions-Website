@@ -1,32 +1,94 @@
 ---
 
 import InterestIcon from "../components/InterestIcon.astro"
+import aptosfont from "../assets/fonts/Aptos.ttf"
 
 const { production } = Astro.props;
+
+const linkableStatuses = ["current", "future"];
+const isStatusLink = linkableStatuses.includes(production.data.status);
 ---
 
-<InterestIcon interest={production.data.mainInterests[0]} />
+<div class="production-row">
+  <InterestIcon interest={production.data.mainInterests[0]} />
 
-<span>
-  {production.data.date.toLocaleDateString()}
-</span>
+  <span class="date">
+    ({production.data.date.toLocaleDateString()})
+  </span>
 
-<a href={`/${production.data.type}s`}>
-  ({production.data.type})
-</a>
+  <!-- TYPE: Your code already links to /artifacts or /projects. 
+       Adding dynamic classes allows you to color them based on the type. -->
+  <a href={`/${production.data.type}s`} class={`type ${production.data.type}`}>
+    ({production.data.type})
+  </a>
 
-<a href={production.data.url}>
-  {production.data.title}
-</a>
+  <a href={production.data.url} class="title">
+    {production.data.title}
+  </a>
 
-<span>
-  ({production.data.status})
-</span>
+  <!-- STATUS: Conditional rendering to make specific statuses links -->
+  {isStatusLink ? (
+    <a href={`/${production.data.status}`} class={`status ${production.data.status}`}>
+      ({production.data.status})
+    </a>
+  ) : (
+    <span class={`status ${production.data.status}`}>
+      ({production.data.status})
+    </span>
+  )}
 
-{
-  production.data.secondaryInterests.map(
-    interest => (
+  <div class="secondary-icons">
+    {production.data.secondaryInterests.map(interest => (
       <InterestIcon interest={interest} />
-    )
-  )
-}
+    ))}
+  </div>
+</div>
+
+<style>
+  @font-face {
+    font-family: 'Aptos';
+    src: url("../assets/fonts/Aptos.ttf") format('truetype');
+  }
+
+  .production-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    font-family: 'Aptos', sans-serif;
+    margin-bottom: 12px;
+  }
+
+  .title {
+    color: #ffffff; /* Sets main title color */
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .title:hover {
+    text-decoration: underline;
+  }
+
+  .date {
+    color: #ffffff;
+    font-style: italic;
+  }
+
+  /* --- TYPE COLORS --- */
+  .type.artifact { color: #ffb451; }
+  .type.project { color: #7a7a7a; }
+
+  /* --- STATUS COLORS --- */
+  .status.finished { color: #0e63ff; }
+  .status.current { color: #a723ff; }
+  .status.future { color: #0bff2c; }
+  .status.cancelled { color: #ff3d3d; }
+  .status.paused { color: #b6e7ff; }
+
+  /* Secondary icon spacing */
+  .secondary-icons {
+    display: flex;
+    gap: 5px;
+  }
+</style>

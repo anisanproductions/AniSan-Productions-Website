@@ -3,6 +3,11 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 import banner from '../assets/banners/allproductionsbanner.png';
 
+import { getCollection } from 'astro:content';
+import ProductionRow from '../components/ProductionRow.astro';
+
+const productions = await getCollection('productions');
+
 ---
 
 <MainLayout title="AniSan Productions | All Productions">
@@ -12,6 +17,12 @@ import banner from '../assets/banners/allproductionsbanner.png';
         <img src={banner.src} class="banner">
     </div>
 
+
+    <div class="productions-list">
+        {productions.map(production => (
+        <ProductionRow production={production} />
+        ))}
+    </div>
 
 </MainLayout>
 

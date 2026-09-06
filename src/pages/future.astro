@@ -7,7 +7,8 @@ import { getCollection } from 'astro:content';
 
 const productions = await getCollection('productions');
 
-const currentThings = productions.filter(
+import ProductionRow from '../components/ProductionRow.astro';
+const futureThings = productions.filter(
   production => production.data.status === 'future'
 );
 
@@ -20,6 +21,11 @@ const currentThings = productions.filter(
         <img src={banner.src} class="banner">
     </div>
 
+    <!--  <div class="productions-list">
+        {futureThings.map(production => (
+          <ProductionRow production={production} />
+        ))}
+    </div> -->
 
 </MainLayout>
 

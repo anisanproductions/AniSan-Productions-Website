@@ -1,0 +1,174 @@
+---
+import { getCollection } from 'astro:content';
+import ProductionRow from '../../components/ProductionRow.astro';
+
+const productions = await getCollection('productions');
+
+const mainProjects = productions
+  .filter(item => item.data.type === 'project' &&
+  item.data.mainInterests.includes('Animation'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const secondaryProjects = productions
+  .filter(item => item.data.type === 'project' &&
+  item.data.secondaryInterests.includes('Animation'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const artifacts = productions
+  .filter(item => item.data.type === 'artifact' &&
+    (item.data.mainInterests.includes('Animation') ||
+    item.data.secondaryInterests.includes('Animation')))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+
+import InterestLayout from '../../layouts/InterestLayout.astro';
+
+// Import the specific assets for this particular interest
+import animBg from '../../assets/backgrounds/animationbackground.png';
+import animFont from '../../assets/fonts/Anisanfonttest3-Regular.woff2';
+import banner from '../../assets/banners/animation2dbanner.png';
+---
+
+
+<!-- Pass the imported assets as props. 
+     Note: Image imports require .src, but font imports usually just return the URL string directly. -->
+<InterestLayout 
+    title="AniSan Productions | Animation" 
+    bg={animBg.src} 
+    fonturl={animFont} 
+    fontName="Anisanfonttest3-Regular"
+>
+    <!-- HERO -->
+    <div class="hero">
+        <img src={banner.src} class="banner">
+    </div>
+    
+    <!-- MAIN PROJECTS -->
+    <div class="main-projects">
+        <p class="main-projects-palabras">Main Projects</p>
+        <div class="productions-list">
+            {mainProjects.map(production => (
+            <ProductionRow production={production} />
+        ))}
+        </div>
+    </div>
+
+    <div class="secondary-projects">
+        <p class="secondary-projects-palabras">Secondary Projects</p>
+        <div class="productions-list">
+            {secondaryProjects.map(production => (
+            <ProductionRow production={production} />
+        ))}
+        </div>
+    </div>
+
+    <div class="artifacts">
+        <p class="artifacts-palabras">Artifacts</p>
+        <div class="productions-list">
+            {artifacts.map(production => (
+            <ProductionRow production={production} />
+        ))}
+        </div>
+    </div>
+
+
+</InterestLayout>
+
+<style>
+
+.main-projects {
+    margin-top: 1px;
+    margin-bottom: 60px;
+}
+
+.secondary-projects {
+    margin-bottom: 60px;
+}
+
+.artifacts {
+    margin-bottom: 60px;
+}
+
+.main-projects-palabras {
+    text-align: center;
+    color: #13501B;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 1px;
+}
+
+.secondary-projects-palabras {
+    text-align: center;
+    color: #13501B;
+    font-size: 30px;
+    margin-bottom: 1px;
+}
+
+.artifacts-palabras {
+    text-align: center;
+    color: #13501B;
+    font-size: 30px;
+    margin-bottom: 1px;
+
+}
+
+.hero {
+    position: relative;
+    margin-top: 1px;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-text .small {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.hero-text .big {
+    font-size: 42px;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.main-image {
+    width: 450px;
+    border: 8px solid #cfcfcf;
+}
+
+.text {
+    max-width: 500px;
+    color: white;
+    font-size: 24px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center; /* Centers the whole row */
+  align-items: center;
+  gap: 10px;               /* Adds equal spacing between each image */
+  margin-top: 40px;        /* Pushes the row down from the hero banner */
+  padding: 0 20px;         /* Prevents images from touching screen edges */
+}
+
+.image-row img {
+  width: 100%;
+  height: auto;
+}
+</style>

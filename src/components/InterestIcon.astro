@@ -1,5 +1,10 @@
 ---
-const {interest} = Astro.props;
+const { interest } = Astro.props;
+
+// 1. Force the incoming string to lowercase
+const normalizedInterest = interest.toLowerCase(); 
+
+// ... (your imports and interestData object remain exactly the same) ...
 
 import animationIcon from '../assets/icons/animation.png';
 import programmingIcon from '../assets/icons/programming.png';
@@ -84,9 +89,19 @@ const interestData = {
 };
 ---
 
-<a href={interestData[{interest}].url}>
+<a href={interestData[normalizedInterest].url}>
   <img
-    src={interestData[{interest}].icon.src}
-    alt={interestData[{interest}].name}
+    class="interest-icon"
+    src={interestData[normalizedInterest].icon.src}
+    alt={interestData[normalizedInterest].name}
   />
 </a>
+
+<style>
+  .interest-icon {
+    width: 32px;  /* Change icon size here */
+    height: 32px; /* Keep height same as width for squares */
+    object-fit: contain;
+    border-radius: 4px; /* Optional: adds slightly rounded corners to icons */
+  }
+</style>

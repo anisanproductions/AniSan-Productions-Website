@@ -10,9 +10,9 @@ const productions = defineCollection({
   schema: z.object({
     title: z.string(),
 
-    description: z.string().optional(),
+    description: z.string(),
 
-    date: z.string(),
+    date: z.coerce.date().optional(),
 
     type: z.enum([
       "project",
@@ -35,7 +35,7 @@ const productions = defineCollection({
       z.string().optional()
     ).default([]),
 
-    url: z.string(),
+    url: z.string().optional(),
 
     file: z.string().optional(),
 

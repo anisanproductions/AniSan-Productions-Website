@@ -1,0 +1,72 @@
+---
+import Navbar from '../components/Navbar.astro';
+import favicon from '../assets/truewhat.ico';
+import Footer from '../components/Footer.astro';
+const { title, bg, fonturl, fontName } = Astro.props;
+
+const extension = fonturl.split('?')[0].split('.').pop().toLowerCase();
+
+const formatMap = {
+    woff2: 'woff2',
+    woff: 'woff',
+    ttf: 'truetype',
+    otf: 'opentype'
+};
+
+const fontFormat = formatMap[extension] || 'truetype';
+
+const fontCSS = `
+  @font-face {
+    font-family: '${fontName}';
+    src: url('${fonturl}') format('woff2'); /* Updated to match your .woff2 file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+`;
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+    <link rel="icon" href={favicon}>
+    <style is:inline set:html={fontCSS}></style>
+
+</head>
+
+<body style={`background-image: url('${bg}'); font-family: '${fontName}', sans-serif;`}>
+    <div class="container">
+        <Navbar />
+        <slot />
+    </div>
+    <Footer />
+</body>
+</html>
+
+<style define:vars={{ 
+    bgImage: `url(${bg})`, 
+    fontUrl: `url(${fonturl})`, 
+    fontName 
+}}>
+@font-face {
+    font-family: var(--fontName);
+    src: var(--fontUrl) format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-image: var(--bgImage);
+    background-repeat: repeat;
+    background-size: 100%;
+    /* Falls back to sans-serif if the custom font fails to load */
+    font-family: var(--fontName), sans-serif; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+</style>
