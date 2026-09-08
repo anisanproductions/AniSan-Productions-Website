@@ -2,17 +2,15 @@
 import { getCollection, render } from "astro:content";
 const posts = await getCollection("blog");
 
+import BlogCard from "../../components/BlogCard.astro"
+
 const sortedPosts = posts.sort(
   (a, b) =>
     b.data.date.valueOf() -
     a.data.date.valueOf()
 );
 
-{
-  sortedPosts.map(post => (
-    <BlogCard post={post} />
-  ))
-}
+
 
 const tags = [
   ...new Set(
@@ -41,6 +39,12 @@ for (const post of posts) {
 
 
 ---
+
+{
+  sortedPosts.map(post => (
+    <BlogCard post={post}/>
+  ))
+}
 
 {
   tags.map(tag => (
