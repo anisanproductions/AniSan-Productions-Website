@@ -9,8 +9,43 @@ const {
   image,
 } = Astro.props;
 ---
-
 <SiteLayout title={title}>
+
+  <article>
+
+    <h1>{title}</h1>
+
+    <p>{description}</p>
+
+    <time datetime={date.toISOString()}>
+      {date.toLocaleDateString()}
+    </time>
+
+    {
+      image && (
+        <img src={image} alt={title} />
+      )
+    }
+
+    <div class="tags">
+      {
+        tags.map(tag => (
+          <a href={`/blog/tag/${tag}/`}>
+            #{tag}
+          </a>
+        ))
+      }
+    </div>
+
+    <main>
+      <slot />
+    </main>
+
+  </article>
+
+</SiteLayout>
+
+<!-- <SiteLayout title={title}>
 
   <article>
 
@@ -36,4 +71,4 @@ const {
 
   </article>
 
-</SiteLayout>
+</SiteLayout>  -->

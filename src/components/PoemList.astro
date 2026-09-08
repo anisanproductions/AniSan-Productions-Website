@@ -1,0 +1,125 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const productions = await getCollection('productions');
+
+const poems = productions.filter(
+  item => item.data.mainInterests && item.data.mainInterests.includes('Poetry')
+);
+
+// Sort the poems descending (newest first)
+poems.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
+// Get the total count so we can calculate the publish number
+const totalPoems = poems.length;
+---
+
+<!--
+<section class="poem-list">
+
+  {
+    poems.map(poem => (
+
+      <article id={poem.id}>
+
+        <h2>{poem.data.title}</h2>
+
+        <time>
+          {poem.data.date.toLocaleDateString()}
+        </time>
+
+
+
+      </article>
+
+    ))
+  }
+
+</section>
+-->
+
+<section class="poem-list">
+  {
+    poems.map(async (poem, index) => {
+      // Get the compiled markdown content
+      const { Content } = await render(poem);
+      
+      // Calculate the publish number (oldest is 1, newest is total)
+      const publishNumber = totalPoems - index;
+      
+      // Format the date to match your style (e.g., 4.3.26)
+      const d = new Date(poem.data.date);
+      const formattedDate = `${d.getMonth() + 1}.${d.getDate()}.${d.getFullYear().toString().slice(-2)}`;
+
+      return (
+        <section class="poem">
+          <div class="poem-title">
+            <strong>[{publishNumber}]</strong> <span class="poem-date">{formattedDate}</span> —
+            <span class="poem-name" style="font-style: italic;"><a href={`/poems/${publishNumber}`}>{poem.data.title}</a></span>
+            {/* You can optionally add your extra links here if you add a frontmatter variable for them! */}
+          </div>
+
+          <div class="poem-text">
+            <Content />
+          </div>
+        </section>
+      );
+    })
+  }
+</section>
+
+<style>
+        .poem {
+            margin: 40px;
+        }
+
+        .poem-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .poem-name {
+            font-size: 1.4em;
+        }
+
+        .poem-text {
+            margin-left: 20px;
+            /* Changed from 0.7 to 1.3 so lines don't overlap inside the paragraph */
+            line-height: 1.3; 
+            /* This makes standard Markdown line-breaks render accurately for poetry! */
+            white-space: pre-line; 
+        }
+
+        .poem-date {
+            opacity: 0.7;
+        }
+
+        .type {
+            font-style: italic;
+        }
+
+        a {
+        color: #ffffff; /* Replaces the default blue with a coral/orange color */
+        }
+</style>
+
+<!--
+<section class="poem-list">
+    {
+    poems.map(poem => (
+    <section class="poem">
+        <div class="poem-title">
+            <strong>[2]</strong> <span class="poem-date">{poem.data.date.toLocaleDateString()}</span> —
+            <span class="poem-name" style="font-style: italic;">{poem.data.title}</span>
+        </div>
+
+        <div class="poem-text">
+            <p>_</p>
+            <p>_</p>
+            <p>_</p>
+        </div>
+    </section>
+    ))
+}
+</section>
+ -->

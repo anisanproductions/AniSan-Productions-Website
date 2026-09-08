@@ -1,0 +1,121 @@
+---
+import { getCollection, render } from 'astro:content';
+
+// 1. Tell Astro which dynamic routes to generate
+export async function getStaticPaths() {
+  const productions = await getCollection('productions');
+  const poems = productions.filter(
+    item => item.data.mainInterests && item.data.mainInterests.includes('Poetry')
+  );
+
+  // Sort descending (newest first) to match the exact numbering from PoemList
+  poems.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+  const totalPoems = poems.length;
+
+  return poems.map((poem, index) => {
+    const publishNumber = totalPoems - index;
+    return {
+      params: { number: publishNumber.toString() }, // Creates routes /poems/1, /poems/2, etc.
+      props: { poem, publishNumber },
+    };
+  });
+}
+
+// 2. Extract props and render the single poem
+const { poem, publishNumber } = Astro.props;
+const { Content } = await render(poem);
+
+const d = new Date(poem.data.date);
+const formattedDate = `${d.getMonth() + 1}.${d.getDate()}.${d.getFullYear().toString().slice(-2)}`;
+
+import favicon from "../poems/zephyrflowe.ico"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{publishNumber} / {poem.data.title} — Zephyr Parahoy</title>
+    <link rel="icon" href={favicon}>
+    <style>
+        body {
+            margin: 0;
+            background-image: url("background.jpg"); /* Leading slash keeps path valid on subroutes */
+            background-size: 100%;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Baskerville Old Face', serif;
+        }
+
+        header {
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .poem {
+            margin: 40px;
+        }
+
+        .poem-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .poem-name {
+            font-size: 1.4em;
+        }
+
+        .poem-text {
+            margin-left: 20px;
+            line-height: 1.3;
+            white-space: pre-line;
+        }
+
+        .poem-date {
+            opacity: 0.7;
+        }
+
+        a:link, a:visited, a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        a:active {
+            color: rgb(174, 174, 174);
+        }
+
+        .nav-footer {
+            margin-left: 40px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/poems">
+            <h1>Zephyr Parahoy's Poetry</h1>
+        </a>
+    </header>
+
+    <section class="poem">
+        <div class="poem-title">
+            <strong>[{publishNumber}]</strong> <span class="poem-date">{formattedDate}</span> —
+            <span class="poem-name" style="font-style: italic;">{poem.data.title}</span>
+        </div>
+
+        <div class="poem-text">
+            <Content />
+        </div>
+    </section>
+
+    <div class="nav-footer">
+        <a href="/poems">← All Poems</a>
+    </div>
+
+</body>
+</html>

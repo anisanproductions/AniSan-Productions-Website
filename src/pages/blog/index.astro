@@ -1,0 +1,57 @@
+---
+import { getCollection, render } from "astro:content";
+const posts = await getCollection("blog");
+
+const sortedPosts = posts.sort(
+  (a, b) =>
+    b.data.date.valueOf() -
+    a.data.date.valueOf()
+);
+
+{
+  sortedPosts.map(post => (
+    <BlogCard post={post} />
+  ))
+}
+
+const tags = [
+  ...new Set(
+    posts.flatMap(post => post.data.tags)
+  )
+];
+
+const archive = {};
+
+for (const post of posts) {
+
+  const date = post.data.date;
+
+  const key =
+    date.toLocaleString("en", {
+      month: "long",
+      year: "numeric"
+    });
+
+  if (!archive[key]) {
+    archive[key] = [];
+  }
+
+  archive[key].push(post);
+}
+
+
+---
+
+{
+  tags.map(tag => (
+    <a href={`/blog/tag/${tag}/`}>
+      #{tag}
+    </a>
+  ))
+}
+
+<!-- FOR TAGS AND ARCHIVES
+const filteredPosts = posts.filter(
+  post => post.data.tags.includes(tag)
+);
+ -->

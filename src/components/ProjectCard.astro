@@ -1,0 +1,40 @@
+---
+const { project } = Astro.props;
+const data = project.data;
+---
+
+<a href={`/projects/${project.id}/`} class="project-card">
+
+  {
+    data.thumbnail && (
+      <img
+        src={data.thumbnail}
+        alt={data.title}
+      />
+    )
+  }
+
+  <h2>{data.title}</h2>
+
+  <p>{data.description}</p>
+
+  <p>{data.status}</p>
+
+</a>
+
+
+<!--  import { getCollection } from "astro:content";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const productions = await getCollection("productions");
+
+const projects = productions.filter(
+  production => production.data.type === "project"
+);
+
+
+{
+  projects.map(project => (
+    <ProjectCard project={project} />
+  ))
+}  -->

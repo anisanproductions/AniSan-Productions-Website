@@ -1,0 +1,57 @@
+---
+const { blog } = Astro.props;
+const data = blog.data;
+---
+
+<article class="blog-card">
+
+  {
+    data.image && (
+      <img
+        src={data.image}
+        alt={data.title}
+      />
+    )
+  }
+
+  <h2>
+    <a href={`/blog/${blog.id}/`}>
+      {data.title}
+    </a>
+  </h2>
+
+  <p>{data.description}</p>
+
+  <time datetime={data.date.toISOString()}>
+    {data.date.toLocaleDateString()}
+  </time>
+
+  <div class="tags">
+    {
+      data.tags.map(tag => (
+        <a href={`/blog/tag/${tag}/`}>
+          #{tag}
+        </a>
+      ))
+    }
+  </div>
+
+</article>
+
+
+<!-- <BlogCard post={post} /> -->
+
+<!-- in:
+
+/blog
+Homepage
+Interest pages
+Project pages
+Tag pages
+Archive pages
+
+Again:
+
+Page decides WHICH posts.
+
+BlogCard decides HOW one post looks. -->

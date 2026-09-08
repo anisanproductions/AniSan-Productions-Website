@@ -27,6 +27,8 @@ import InterestLayout from '../../layouts/InterestLayout.astro';
 import INTRBg from '../../assets/backgrounds/poetrybackground.png';
 import INTRFont from '../../assets/fonts/Anisanpoeticfonttest4-Regular.ttf';
 import banner from '../../assets/banners/poetrybanner.png';
+
+import flower from "../../assets/button-images/zephyrflowe.png"
 ---
 
 
@@ -42,6 +44,10 @@ import banner from '../../assets/banners/poetrybanner.png';
     <div class="hero">
         <img src={banner.src} class="banner">
     </div>
+
+    <a href="/poems">
+        <img src={flower.src} class="flower">
+    </a>
     
     <!-- MAIN PROJECTS -->
     <div class="main-projects">
@@ -174,4 +180,9 @@ import banner from '../../assets/banners/poetrybanner.png';
   width: 100%;
   height: auto;
 }
+
+.flower {
+    width: 50px;
+}
+
 </style>

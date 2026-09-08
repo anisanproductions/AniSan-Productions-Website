@@ -172,3 +172,28 @@ import banner from '../../assets/banners/animation2dbanner.png';
   height: auto;
 }
 </style>
+
+<!-- 
+---
+import { getCollection } from "astro:content";
+import BlogCard from "../../components/BlogCard.astro";
+
+const posts = await getCollection("blog");
+
+const blogPosts = posts.filter(
+  post => post.data.tags.includes("animation")
+);
+---
+
+<section>
+
+  <h2>Blog Posts</h2>
+
+  {
+    blogPosts.map(post => (
+      <BlogCard post={post} />
+    ))
+  }
+
+</section>
+ -->
