@@ -1,4 +1,10 @@
 ---
+
+
+
+---
+<!--
+YOU FRONTMATTERS ALL FRICKED UP MY WHOLE SITE, AHHHGUGHGH THE FRONTMATTERS
 import { getCollection, render } from "astro:content";
 const posts = await getCollection("blog");
 
@@ -36,10 +42,12 @@ for (const post of posts) {
 
   archive[key].push(post);
 }
+  
 
+-->
 
----
-
+<!-- 
+AND YOU TWO WERE PART OF THE HTML BODY NON-FRONTMATTER
 {
   sortedPosts.map(post => (
     <BlogCard post={post}/>
@@ -53,6 +61,14 @@ for (const post of posts) {
     </a>
   ))
 }
+-->
+
+
+
+
+
+
+
 
 <!-- FOR TAGS AND ARCHIVES
 const filteredPosts = posts.filter(
