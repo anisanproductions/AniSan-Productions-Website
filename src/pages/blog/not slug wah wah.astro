@@ -5,6 +5,13 @@ import BlogPostLayout
   from "../../layouts/BlogPostLayout.astro";
 
 
+
+
+---
+
+<!--
+WHY MUST YOU FRONTMATTERINOS FRCK MY LIFE AUGHHHH
+
 export async function getStaticPaths() {
 
   const posts = await getCollection("blog");
@@ -25,8 +32,10 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 
 const { Content } = await render(post);
+-->
 
----
+<!--
+AND YOU, BODY-NON-FRONTMATTERINOS, STYA THERE
 
 <BlogPostLayout
   title={post.data.title}
@@ -39,6 +48,9 @@ const { Content } = await render(post);
   <Content />
 
 </BlogPostLayout>
+
+-->
+
 
 <!-- 
 ---
