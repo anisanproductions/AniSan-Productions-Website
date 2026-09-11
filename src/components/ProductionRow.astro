@@ -5,6 +5,8 @@ import aptosfont from "../assets/fonts/Aptos.ttf"
 
 const { production } = Astro.props;
 
+const { colorint } = Astro.props;
+
 const linkableStatuses = ["current", "future"];
 const isStatusLink = linkableStatuses.includes(production.data.status);
 ---
@@ -44,7 +46,7 @@ const isStatusLink = linkableStatuses.includes(production.data.status);
   </div>
 </div>
 
-<style>
+<style define:vars={{ colorint }}>
   @font-face {
     font-family: 'Aptos';
     src: url("../assets/fonts/Aptos.ttf") format('truetype');
@@ -60,7 +62,7 @@ const isStatusLink = linkableStatuses.includes(production.data.status);
   }
 
   .title {
-    color: #ffffff; /* Sets main title color */
+    color: var(--colorint);
     text-decoration: none;
     font-weight: bold;
     font-style: italic;
@@ -71,7 +73,7 @@ const isStatusLink = linkableStatuses.includes(production.data.status);
   }
 
   .date {
-    color: #ffffff;
+    color: var(--colorint);
     font-style: italic;
   }
 
