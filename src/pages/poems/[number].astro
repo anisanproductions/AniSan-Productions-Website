@@ -5,7 +5,7 @@ import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
   const productions = await getCollection('productions');
   const poems = productions.filter(
-    item => item.data.mainInterests && item.data.mainInterests.includes('Poetry')
+    item => item.data.mainInterests && item.data.mainInterests.includes('Poetry') && item.data.type === 'artifact'
   );
 
   // Sort descending (newest first) to match the exact numbering from PoemList

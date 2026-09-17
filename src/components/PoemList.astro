@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content';
 const productions = await getCollection('productions');
 
 const poems = productions.filter(
-  item => item.data.mainInterests && item.data.mainInterests.includes('Poetry')
+  item => item.data.mainInterests && item.data.mainInterests.includes('Poetry') && item.data.type === 'artifact'
 );
 
 // Sort the poems descending (newest first)
