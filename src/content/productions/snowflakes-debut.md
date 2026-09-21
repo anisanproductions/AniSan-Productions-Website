@@ -6,5 +6,5 @@ type: "artifact"
 status: "finished"
 mainInterests:
     - "Composition"
-url: "/productions/Snowflakes.wav"
+url: "/productions/Snowflakes.mp3"
 ---

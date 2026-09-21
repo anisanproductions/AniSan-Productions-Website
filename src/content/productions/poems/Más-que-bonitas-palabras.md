@@ -5,7 +5,7 @@ type: "artifact"
 status: "finished"
 mainInterests:
     - "Poetry"
-url: "/poems/48"
+url: "/poems/47"
 project: "El Sonido del Silencio"
 ---
 

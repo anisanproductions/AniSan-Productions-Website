@@ -6,5 +6,5 @@ type: "artifact"
 status: "finished"
 mainInterests:
     - "Composition"
-url: "/productions/Tense.wav"
+url: "/productions/Tense.mp3"
 ---
