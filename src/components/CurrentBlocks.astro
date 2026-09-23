@@ -16,6 +16,20 @@ const interestColors: Record<string, string> = {
   "Composition": "#00c9b7",
   "Editing": "#006b38",
 };
+
+const interestUrls: Record<string, string> = {
+  animation: '/interests/animacion',
+  programming: '/interests/programacion',
+  blender: '/interests/blender',
+  drawing: '/interests/dibujo',
+  writing: '/interests/escritura',
+  poetry: '/interests/poesia',
+  english: '/interests/ingles',
+  violin: '/interests/violin',
+  piano: '/interests/piano',
+  composition: '/interests/composicion',
+  editing: '/interests/edicion',
+};
 ---
 
 <div class="current-block">
@@ -31,14 +45,20 @@ const interestColors: Record<string, string> = {
   <div class="block-info">
 
     <div class="interests">
-      {production.data.mainInterests.map((interest) => (
-        <span
-          class="interest"
-          style={`color: ${interestColors[interest] ?? "#ffffff"}`}
-        >
+      {production.data.mainInterests.map((interest) => {
+        const key = interest.toLowerCase();
+        const href = interestUrls[key] ?? `/interests/${key}`;
+
+        return (
+          <a
+            href={href}
+            class="interest"
+            style={`color: ${interestColors[interest] ?? "#ffffff"}`}
+          >
           {interest.toUpperCase()}
-        </span>
-      ))}
+          </a>
+        );
+      })}
     </div>
 
     <a href={production.data.url} class="title">
