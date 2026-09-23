@@ -8,9 +8,10 @@ import { getCollection } from 'astro:content';
 const productions = await getCollection('productions');
 
 import ProductionRow from '../components/ProductionRow.astro';
-const futureThings = productions.filter(
-  production => production.data.status === 'future'
-);
+import FutureBlocks from '../components/FutureBlocks.astro';
+const futureThings = productions
+  .filter(production => production.data.status === 'future')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 ---
 
@@ -21,11 +22,11 @@ const futureThings = productions.filter(
         <img src={banner.src} class="banner">
     </div>
 
-    <!--  <div class="productions-list">
+    <div class="future-list">
         {futureThings.map(production => (
-          <ProductionRow production={production} />
+          <FutureBlocks production={production} />
         ))}
-    </div> -->
+    </div>
 
 </MainLayout>
 

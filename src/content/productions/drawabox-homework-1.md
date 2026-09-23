@@ -6,4 +6,5 @@ type: "artifact"
 status: "future"
 mainInterests:
     - "Drawing"
+url: "/productions/notice.png"
 ---

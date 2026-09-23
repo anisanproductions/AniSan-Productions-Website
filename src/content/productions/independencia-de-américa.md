@@ -6,7 +6,7 @@ type: "project"
 status: "current"
 mainInterests:
     - "Animation"
-url: "/projects/independencia-de-america"
-thumbnail: "../../projects/independencia-de-america/"
+url: "/boohoo.png"
+thumbnail: "/noimage.png"
 ---
 

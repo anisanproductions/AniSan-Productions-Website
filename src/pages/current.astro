@@ -7,11 +7,11 @@ import { getCollection } from 'astro:content';
 
 const productions = await getCollection('productions');
 
-import ProductionRow from '../components/ProductionRow.astro';
-const currentThings = productions.filter(
-  production => production.data.status === 'current'
-);
+import CurrentBlocks from '../components/CurrentBlocks.astro';
 
+const currentThings = productions
+  .filter(production => production.data.status === 'current')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <MainLayout title="AniSan Productions | Current Things">
@@ -21,11 +21,11 @@ const currentThings = productions.filter(
         <img src={banner.src} class="banner">
     </div>
 
-    <!--  <div class="productions-list">
+    <div class="current-list">
         {currentThings.map(production => (
-          <ProductionRow production={production} />
+          <CurrentBlocks production={production} />
         ))}
-    </div> -->
+    </div>
 
 </MainLayout>
 
@@ -89,5 +89,24 @@ const currentThings = productions.filter(
 .image-row img {
   width: 100%;
   height: auto;
+}
+
+
+.current-list {
+    width: min(1150px, 92%);
+    margin: 12px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 16px;
+    row-gap: 18px;
+}
+
+@media (max-width: 750px) {
+    .current-list {
+      grid-template-columns: 1fr;
+    }
 }
 </style>

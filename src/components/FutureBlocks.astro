@@ -1,0 +1,64 @@
+---
+import aptosfont from "../assets/fonts/Aptos.ttf"
+
+const { production } = Astro.props;
+
+
+
+---
+<div class="futureblock">
+    <div class="future-card">
+        <a href={production.data.url}>
+            <h2>{production.data.title}</h2>
+        </a>
+        <div class="divider"></div>
+        <p>{production.data.description}</p>
+    </div>
+</div>
+    
+<style>
+@font-face {
+    font-family: 'Aptos';
+    src: url("../assets/fonts/Aptos.ttf") format('truetype');
+}
+
+.future-card {
+  width: min(780px, 90%);
+  margin: 16px auto;
+  padding: 12px 20px 20px;
+
+  background: #fff;
+  border: 8px solid #000;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.future-card h2 {
+  margin: 0;
+  font-family: 'Aptos', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.future-card .divider {
+  width: 60%;
+  height: 2px;
+  background: #000;
+  margin: 9px auto 3px;
+}
+
+.future-card p {
+  margin: 0;
+  font-family: 'Aptos', sans-serif;
+  font-size: clamp(16px, 2vw, 22px);
+}
+
+a:link, a:visited {
+  color: black;
+}
+
+.type.artifact { color: #000000; }
+.type.project { color: #000000; }
+</style>

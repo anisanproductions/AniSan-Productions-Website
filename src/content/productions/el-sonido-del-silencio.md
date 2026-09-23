@@ -8,6 +8,6 @@ mainInterests:
     - "Poetry"
 secondaryInterests:
     - "English"
-url: "/projects/el-sonido-del-silencio"
-thumbnail: "../../projects/el-sonido-del-silencio/sonidodelsilencioportada.png"
+url: "/boohoo.png"
+thumbnail: "/projectimages/sonidodelsilencioportada.png"
 ---

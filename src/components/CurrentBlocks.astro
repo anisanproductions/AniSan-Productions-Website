@@ -1,0 +1,138 @@
+---
+import aptosfont from "../assets/fonts/Aptos.ttf";
+
+const { production } = Astro.props;
+
+const interestColors: Record<string, string> = {
+  "Animation": "#00c853",
+  "Programming": "#0066cc",
+  "Blender": "#ff7a00",
+  "Drawing": "#ffffff",
+  "Writing": "#8e247f",
+  "Poetry": "#d000d0",
+  "English": "#ffd900",
+  "Violin": "#ff0000",
+  "Piano": "#ffffff",
+  "Composition": "#00c9b7",
+  "Editing": "#006b38",
+};
+---
+
+<div class="current-block">
+  {production.data.thumbnail && (
+    <div class="thumbnail">
+      <img
+        src={production.data.thumbnail}
+        alt={production.data.title}
+      />
+    </div>
+  )}
+
+  <div class="block-info">
+
+    <div class="interests">
+      {production.data.mainInterests.map((interest) => (
+        <span
+          class="interest"
+          style={`color: ${interestColors[interest] ?? "#ffffff"}`}
+        >
+          {interest.toUpperCase()}
+        </span>
+      ))}
+    </div>
+
+    <a href={production.data.url} class="title">
+        {production.data.title}
+    </a>
+
+  </div>
+</div>
+
+<style>
+  @font-face {
+    font-family: 'Aptos';
+    src: url("../assets/fonts/Aptos.ttf") format('truetype');
+  }
+
+  .current-block {
+    width: 100%;
+    height: 275px;
+
+    background: black;
+
+    display: grid;
+    grid-template-columns: 60% 40%;
+
+    overflow: hidden;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .block-info {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+
+  .interests {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: 'Aptos', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .interest {
+    white-space: nowrap;
+  }
+
+  .title {
+    margin: auto 0;
+
+    color: white;
+
+    font-family: 'Aptos', sans-serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    line-height: 1.25;
+
+    text-align: center;
+  }
+
+  @media (max-width: 750px) {
+    .current-block {
+      height: auto;
+      min-height: 250px;
+      grid-template-columns: 55% 45%;
+    }
+
+    .title {
+      font-size: 22px;
+    }
+
+    .interests {
+      font-size: 13px;
+    }
+  }
+</style>
