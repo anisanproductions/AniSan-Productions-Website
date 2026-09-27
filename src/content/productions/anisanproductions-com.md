@@ -8,4 +8,5 @@ mainInterests:
     - "Programming"
 url: "/boohoo.png"
 thumbnail: "/projectimages/picture.png"
+blog: "https://anisanproductions.blogspot.com/search/label/anisanproductions.com"
 ---

@@ -7,6 +7,7 @@ status: "current"
 mainInterests:
     - "Animation"
 url: "/boohoo.png"
-thumbnail: "/noimage.png"
+thumbnail: "/projectimages/Centro1_0339.png"
+blog: "https://anisanproductions.blogspot.com/search/label/Independencia%20de%20Am%C3%A9rica"
 ---
 

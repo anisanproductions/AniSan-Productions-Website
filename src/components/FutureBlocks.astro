@@ -1,5 +1,6 @@
 ---
 import aptosfont from "../assets/fonts/Aptos.ttf"
+import AllProductions from "../pages/all-productions.astro";
 
 const { production } = Astro.props;
 
@@ -9,7 +10,7 @@ const { production } = Astro.props;
 <div class="futureblock">
     <div class="future-card">
         <a href={production.data.url}>
-            <h2>{production.data.title}</h2>
+            <h2>{production.data.title} ({production.data.type})</h2>
         </a>
         <div class="divider"></div>
         <p>{production.data.description}</p>

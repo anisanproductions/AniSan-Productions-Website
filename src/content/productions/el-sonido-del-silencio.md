@@ -10,4 +10,5 @@ secondaryInterests:
     - "English"
 url: "/boohoo.png"
 thumbnail: "/projectimages/sonidodelsilencioportada.png"
+blog: "https://anisanproductions.blogspot.com/search/label/El%20Sonido%20del%20Silencio"
 ---
