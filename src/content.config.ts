@@ -12,7 +12,7 @@ const productions = defineCollection({
 
     description: z.string().optional(),
 
-    date: z.coerce.date().optional(),
+    date: z.coerce.date(),
 
     type: z.enum([
       "project",
@@ -27,9 +27,7 @@ const productions = defineCollection({
       "paused",
     ]),
 
-    mainInterests: z.array(
-      z.string()
-    ).min(1),
+    mainInterest: z.string(),
 
     secondaryInterests: z.array(
       z.string().optional()
@@ -44,6 +42,8 @@ const productions = defineCollection({
     project: z.string().optional(),
 
     blog: z.string().optional(),
+
+    otherImages: z.array(z.string()).optional(),
   }),
 });
 

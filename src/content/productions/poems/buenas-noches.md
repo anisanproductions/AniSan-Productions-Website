@@ -3,8 +3,7 @@ title: "Buenas Noches"
 date: 10-13-2025
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/28"
 project: "El Sonido del Silencio"
 ---

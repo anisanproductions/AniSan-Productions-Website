@@ -4,7 +4,8 @@ description: "Proyecto escolar; poema animado"
 date: 04-10-2024
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Animation"
+mainInterest: "Animation"
+secondaryInterests:
+    - "Poetry"
 url: "/productions/contigo-en-este-lugar.mp4"
 ---

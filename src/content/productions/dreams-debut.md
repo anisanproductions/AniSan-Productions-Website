@@ -4,7 +4,6 @@ description: "Part of the Musical Album DEBUT"
 date: 08-26-2025
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Composition"
+mainInterest: "Composition"
 url: "/productions/Dreams.mp3"
 ---

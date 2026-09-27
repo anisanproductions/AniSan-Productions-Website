@@ -4,7 +4,6 @@ description: "I LOST ALL MY SOUNDFONTS So hear that thing in my only song left w
 date: 9-16-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Composition"
+mainInterest: "Composition"
 url: "/productions/lostsoundfontsmrblameaughgh.mp3"
 ---

@@ -10,7 +10,10 @@ const productions = await getCollection('productions');
 import CurrentBlocks from '../components/CurrentBlocks.astro';
 
 const currentThings = productions
-  .filter(production => production.data.status === 'current')
+  .filter(production => {
+  const isArtifactWithProject = production.data.type === 'artifact' && production.data.project;
+  return production.data.status === 'current' && !isArtifactWithProject; 
+})
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 

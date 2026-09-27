@@ -3,8 +3,7 @@ title: "i don't know if you remember..."
 date: 5-19-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/36"

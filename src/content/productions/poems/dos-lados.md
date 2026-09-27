@@ -3,8 +3,7 @@ title: "Dos Lados"
 date: 10-13-2025
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/22"
 project: "El Sonido del Silencio"
 ---

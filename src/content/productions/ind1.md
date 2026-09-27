@@ -4,8 +4,7 @@ description: "El primer episodio de mi miniserie Independencia de América"
 date: 08-28-2024
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Animation"
+mainInterest: "Animation"
 url: "/productions/IND_1.mp4"
 project: "Independencia de América"
 ---

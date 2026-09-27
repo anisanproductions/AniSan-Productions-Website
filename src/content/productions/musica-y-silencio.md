@@ -4,7 +4,6 @@ description: "Un trabajo que me pidieron hacer en Artes en el colegio..."
 date: 07-18-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Editing"
+mainInterest: "Editing"
 url: "/productions/musica-y-silencio-stop-motion.mp4"
 ---

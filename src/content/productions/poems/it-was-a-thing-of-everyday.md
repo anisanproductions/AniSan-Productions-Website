@@ -3,8 +3,7 @@ title: "it was a thing of everyday"
 date: 4-24-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/31"

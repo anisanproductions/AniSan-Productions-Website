@@ -4,8 +4,7 @@ description: "Fan animation made for the @Baljot41 Solarballs Theories Youtube c
 date: 10-27-2024
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Animation"
+mainInterest: "Animation"
 secondaryInterests:
     - "English"
 url: "/productions/system-41-fan-animation.mp4"

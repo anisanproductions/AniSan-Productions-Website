@@ -3,8 +3,7 @@ title: "Ático"
 date: 7-04-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/45"

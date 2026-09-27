@@ -3,8 +3,7 @@ title: "Más que bonitas palabras"
 date: 8-13-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/47"
 project: "El Sonido del Silencio"
 ---

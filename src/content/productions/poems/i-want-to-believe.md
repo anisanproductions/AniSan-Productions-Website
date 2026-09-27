@@ -3,8 +3,7 @@ title: "I Want to Believe"
 date: 6-2-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/39"

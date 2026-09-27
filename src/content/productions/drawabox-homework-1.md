@@ -4,7 +4,6 @@ description: "I will upload here some drawing exercise I've made... there's stil
 date: 09-05-2026
 type: "artifact"
 status: "future"
-mainInterests:
-    - "Drawing"
+mainInterest: "Drawing"
 url: "/productions/notice.png"
 ---

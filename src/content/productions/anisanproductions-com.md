@@ -4,9 +4,9 @@ description: "After a year, I'm finally making and finishing my website, anisanp
 date: 09-06-2026
 type: "project"
 status: "current"
-mainInterests:
-    - "Programming"
-url: "/boohoo.png"
-thumbnail: "/projectimages/picture.png"
+mainInterest: "Programming"
+url: "/projects/anisanproductions.com"
+thumbnail: "/projectthumbnails/picture.png"
+project: "anisanproductions.com"
 blog: "https://anisanproductions.blogspot.com/search/label/anisanproductions.com"
 ---

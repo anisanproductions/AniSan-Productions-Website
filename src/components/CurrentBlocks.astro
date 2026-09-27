@@ -4,17 +4,17 @@ import aptosfont from "../assets/fonts/Aptos.ttf";
 const { production } = Astro.props;
 
 const interestColors: Record<string, string> = {
-  "Animation": "#00c853",
-  "Programming": "#0066cc",
-  "Blender": "#ff7a00",
-  "Drawing": "#ffffff",
-  "Writing": "#8e247f",
-  "Poetry": "#d000d0",
-  "English": "#ffd900",
+  "Animation": "#00ff00",
+  "Programming": "#001e8c",
+  "Blender": "#f57c02",
+  "Drawing": "#7d7d7d",
+  "Writing": "#aa00ff",
+  "Poetry": "#f700ff",
+  "English": "#fcfc03",
   "Violin": "#ff0000",
   "Piano": "#ffffff",
-  "Composition": "#00c9b7",
-  "Editing": "#006b38",
+  "Composition": "#00ffd5",
+  "Editing": "#014006",
 };
 
 const interestUrls: Record<string, string> = {
@@ -45,20 +45,15 @@ const interestUrls: Record<string, string> = {
   <div class="block-info">
 
     <div class="interests">
-      {production.data.mainInterests.map((interest) => {
-        const key = interest.toLowerCase();
-        const href = interestUrls[key] ?? `/interests/${key}`;
-
-        return (
-          <a
-            href={href}
-            class="interest"
-            style={`color: ${interestColors[interest] ?? "#ffffff"}`}
-          >
-          {interest.toUpperCase()}
-          </a>
-        );
-      })}
+      {production.data.mainInterest && (
+        <a
+          href={interestUrls[production.data.mainInterest.toLowerCase()] ?? `/interests/${production.data.mainInterest.toLowerCase()}`}
+          class="interest"
+          style={`color: ${interestColors[production.data.mainInterest] ?? "#ffffff"}`}
+        >
+          {production.data.mainInterest.toUpperCase()}
+        </a>
+      )}
     </div>
 
     <a href={production.data.url} class="title">

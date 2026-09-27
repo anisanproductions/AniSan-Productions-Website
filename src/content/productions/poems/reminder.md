@@ -3,8 +3,7 @@ title: "reminder"
 date: 05-15-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/33"

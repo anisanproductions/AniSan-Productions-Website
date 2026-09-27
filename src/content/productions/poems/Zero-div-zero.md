@@ -3,8 +3,7 @@ title: "0 div 0"
 date: 5-27-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/37"
 project: "El Sonido del Silencio"
 ---

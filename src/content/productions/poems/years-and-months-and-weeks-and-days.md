@@ -3,8 +3,7 @@ title: "Years and months and weeks and days"
 date: 5-19-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/34"

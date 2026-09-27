@@ -3,8 +3,7 @@ title: "I tried Again"
 date: 7-24-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/46"

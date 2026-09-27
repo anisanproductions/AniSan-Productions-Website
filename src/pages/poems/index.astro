@@ -6,7 +6,7 @@ const productions = await getCollection('productions');
 
 const poems = productions.filter(
   item =>
-    item.data.mainInterests.includes('Poetry')
+    item.data.mainInterest === 'Poetry'
 );
 import favicon from "../poems/zephyrflowe.ico"
 ---

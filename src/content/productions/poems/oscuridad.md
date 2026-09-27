@@ -3,8 +3,7 @@ title: "Oscuridad"
 date: 10-13-2025
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/8"
 project: "El Sonido del Silencio"
 ---

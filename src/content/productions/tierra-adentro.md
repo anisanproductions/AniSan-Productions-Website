@@ -4,7 +4,6 @@ description: "Mi interpretación violinística de Cueca Tierra Adentro. Yo, eh..
 date: 09-14-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Violin"
+mainInterest: "Violin"
 url: "/productions/cueca-tierra-adentro.mp3"
 ---

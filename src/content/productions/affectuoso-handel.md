@@ -4,7 +4,6 @@ description: "My first Violin artifact! I loved this piece! Even if I played it 
 date: 09-03-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Violin"
+mainInterest: "Violin"
 url: "/productions/sonata-no4-affettuoso-by-handel-perfomance.mp3"
 ---

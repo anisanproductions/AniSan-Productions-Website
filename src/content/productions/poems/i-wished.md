@@ -3,8 +3,7 @@ title: "I Wished"
 date: 5-27-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/38"

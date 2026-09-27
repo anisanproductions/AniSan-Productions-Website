@@ -3,8 +3,7 @@ title: "I wish I had a twin sister..."
 date: 6-4-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/41"

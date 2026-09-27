@@ -1,0 +1,29 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProductionRow from '../../../components/ProductionRow.astro';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+// 1. Fetch the specific production entry for this page
+const production = await getEntry('productions', 'el-sonido-del-silencio');
+
+// Optional safety check if entry isn't found
+if (!production) {
+  throw new Error("Production 'el-sonido-del-silencio' not found.");
+}
+
+// Import the specific assets for this particular interest
+import esdsBg from '../../../assets/projectbackgrounds/esdsbackground.png';
+import esdsFont from '../../../assets/fonts/ftltlt.ttf';
+---
+
+<!-- 2. Pass `production` to ProjectLayout as a prop -->
+<ProjectLayout 
+    title="El Sonido del Silencio | AniSan Productions" 
+    bg={esdsBg.src} 
+    fonturl={esdsFont} 
+    fontName="Footlight MT Light"
+    colorint="black"
+    production={production}
+>
+
+</ProjectLayout>

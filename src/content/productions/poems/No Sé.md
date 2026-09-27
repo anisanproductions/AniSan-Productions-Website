@@ -3,8 +3,7 @@ title: "No Sé"
 date: 5-19-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/35"
 project: "El Sonido del Silencio"
 ---

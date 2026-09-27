@@ -3,8 +3,7 @@ title: "Dishonestidad"
 date: 6-4-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/42"
 project: "El Sonido del Silencio"
 ---

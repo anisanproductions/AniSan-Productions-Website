@@ -3,8 +3,7 @@ title: "Never-Ending Dazzling Moon Dance"
 date: 6-4-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/40"

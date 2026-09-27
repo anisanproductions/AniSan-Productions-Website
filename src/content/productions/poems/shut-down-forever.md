@@ -3,8 +3,7 @@ title: "shut down forever"
 date: 4-28-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/32"

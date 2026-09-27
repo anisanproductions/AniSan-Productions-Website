@@ -3,8 +3,7 @@ title: "El Sonido del Silencio (Reprise)"
 date: 10-13-2025
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 url: "/poems/20"
 project: "El Sonido del Silencio"
 ---

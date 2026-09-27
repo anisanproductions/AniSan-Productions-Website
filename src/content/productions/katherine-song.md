@@ -4,7 +4,6 @@ description: "My first piano piece I played from start to finish! Very terribly 
 date: 09-01-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Piano"
+mainInterest: "Piano"
 url: "/productions/katherine-song-by-locke01.mp3"
 ---

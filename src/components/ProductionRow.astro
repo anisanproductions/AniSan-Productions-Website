@@ -12,7 +12,7 @@ const isStatusLink = linkableStatuses.includes(production.data.status);
 ---
 
 <div class="production-row">
-  <InterestIcon interest={production.data.mainInterests[0]} />
+  <InterestIcon interest={production.data.mainInterest} />
 
   <span class="date">
     ({production.data.date.toLocaleDateString()})

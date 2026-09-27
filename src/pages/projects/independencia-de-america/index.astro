@@ -1,0 +1,29 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProductionRow from '../../../components/ProductionRow.astro';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+// 1. Fetch the specific production entry for this page
+const production = await getEntry('productions', 'independencia-de-américa');
+
+// Optional safety check if entry isn't found
+if (!production) {
+  throw new Error("Production 'independencia-de-américa' not found.");
+}
+
+// Import the specific assets for this particular interest
+import indBg from '../../../assets/projectbackgrounds/indbackground.png';
+import indFont from '../../../assets/fonts/coprgtb.ttf';
+---
+
+<!-- 2. Pass `production` to ProjectLayout as a prop -->
+<ProjectLayout 
+    title="Independencia de América | AniSan Productions" 
+    bg={indBg.src} 
+    fonturl={indFont} 
+    fontName="Copperplate Gothic Bold"
+    colorint="black"
+    production={production}
+>
+
+</ProjectLayout>

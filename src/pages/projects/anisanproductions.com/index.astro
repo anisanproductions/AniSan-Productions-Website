@@ -1,0 +1,29 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProductionRow from '../../../components/ProductionRow.astro';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+// 1. Fetch the specific production entry for this page
+const production = await getEntry('productions', 'anisanproductions-com');
+
+// Optional safety check if entry isn't found
+if (!production) {
+  throw new Error("Production 'anisanproductions-com' not found.");
+}
+
+// Import the specific assets for this particular interest
+import webBg from '../../../assets/projectbackgrounds/anisanwbackground.jpg';
+import webFont from '../../../assets/fonts/Anisanfonttest3-Regular.woff2';
+---
+
+<!-- 2. Pass `production` to ProjectLayout as a prop -->
+<ProjectLayout 
+    title="anisanproductions.com | AniSan Productions" 
+    bg={webBg.src} 
+    fonturl={webFont} 
+    fontName="Anisanfonttest3-Regular"
+    colorint="black"
+    production={production}
+>
+
+</ProjectLayout>

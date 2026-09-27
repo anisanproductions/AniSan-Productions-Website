@@ -1,0 +1,358 @@
+---
+import Navbar from '../components/Navbar.astro';
+import favicon from '../assets/truewhat.ico';
+import Footer from '../components/Footer.astro';
+
+// 1. Receive 'production' from Astro.props
+const { title, bg, fonturl, fontName, colorint, production } = Astro.props;
+
+const extension = fonturl.split('?')[0].split('.').pop().toLowerCase();
+
+import { getCollection } from 'astro:content';
+import ProductionRow from '../components/ProductionRow.astro';
+
+const productions = await getCollection('productions');
+
+// 2. Fixed syntax: Removed internal `{}` around production.data.project
+const projectArtifacts = productions
+  .filter(item => item.data.project === production.data.project && item.data.type === 'artifact')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatMap = {
+    woff2: 'woff2',
+    woff: 'woff',
+    ttf: 'truetype',
+    otf: 'opentype'
+};
+
+const fontFormat = formatMap[extension] || 'truetype';
+
+const fontCSS = `
+  @font-face {
+    font-family: '${fontName}';
+    src: url('${fonturl}') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+`;
+
+const linkableStatuses = ["current", "future"];
+const isStatusLink = linkableStatuses.includes(production.data.status);
+
+const interestColors: Record<string, string> = {
+  "Animation": "#00ff00",
+  "Programming": "#001e8c",
+  "Blender": "#f57c02",
+  "Drawing": "#7d7d7d",
+  "Writing": "#aa00ff",
+  "Poetry": "#f700ff",
+  "English": "#fcfc03",
+  "Violin": "#ff0000",
+  "Piano": "#ffffff",
+  "Composition": "#00ffd5",
+  "Editing": "#014006",
+};
+
+const interestUrls: Record<string, string> = {
+  animation: '/interests/animacion',
+  programming: '/interests/programacion',
+  blender: '/interests/blender',
+  drawing: '/interests/dibujo',
+  writing: '/interests/escritura',
+  poetry: '/interests/poesia',
+  english: '/interests/ingles',
+  violin: '/interests/violin',
+  piano: '/interests/piano',
+  composition: '/interests/composicion',
+  editing: '/interests/edicion',
+};
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+    <link rel="icon" href={favicon}>
+    <style is:inline set:html={fontCSS}></style>
+</head>
+
+<body style={`background-image: url('${bg}'); font-family: '${fontName}', sans-serif;`}>
+    <div class="container">
+        <Navbar />
+        <div class="layout-container">
+            <!-- 1. Centered Header -->
+            <header class="main-header">
+                <h1 class="site-title">{production.data.title}</h1>
+                <h2 class="site-subtitle">Interests: <span class="highlight-blue">
+                    {[production.data.mainInterest, ...(production.data.secondaryInterests || [])]
+                    .filter(Boolean) // This safely removes undefined/null if mainInterests is missing
+                    .map((interest, index, array) => {
+                        const key = interest.toLowerCase();
+                        const href = interestUrls[key] ?? `/interests/${key}`;
+
+                        return (
+                            <>
+                                <a
+                                href={href}
+                                class="interest"
+                                style={`color: ${interestColors[interest] ?? "#ffffff"}`}>
+                                    {interest.charAt(0).toUpperCase() + interest.slice(1).toLowerCase()}
+                                </a>{index < array.length - 1 && ", "}
+                            </>
+                        );
+                    })}
+                </span></h2>
+            </header>
+
+            <!-- 2. Two-Column Grid for Text (Left) and Image (Right) -->
+<!-- 2. Two-Column Grid for Text/Links (Left) and Images (Right) -->
+            <main class="content-grid">
+                <!-- LEFT COLUMN: Text & Links -->
+                <section class="left-column">
+                    <div class="text-info">
+                        <p class="meta-data"><strong>Upload Date:</strong> {production.data.date?.toLocaleDateString()}</p>
+                        <p class="meta-data"><strong>Status:</strong> <span class="highlight-pink">
+                            {isStatusLink ? (
+                                <a href={`/${production.data.status}`} class={`status ${production.data.status}`}>
+                                    {production.data.status}
+                                </a>
+                            ) : (
+                                <span class={`status ${production.data.status}`}>
+                                    {production.data.status.charAt(0).toUpperCase() + production.data.status.slice(1).toLowerCase()}
+                                </span>
+                            )}
+                        </span></p>
+
+                        <h3 class="description-title">DESCRIPTION:</h3>
+                        <p class="description-text">
+                            {production.data.description}
+                        </p>
+                    </div>
+
+                    <!-- 3. Bottom Links (Moved inside the left column) -->
+                    <footer class="bottom-section" style="margin-top: 40px;">
+                        <h2 class="section-headingo">Click here</h2>
+                        <div class="link-list">
+                            {projectArtifacts.map(prod => (
+                                <ProductionRow production={prod} colorint={colorint}/>
+                            ))}
+                        </div>
+
+                        {production.data.blog && (
+                            <h2 class="section-headinga"><a href={production.data.blog} class="blog-link">Blog Posts</a></h2>
+                        )}
+                    </footer>
+                </section>
+
+                <!-- RIGHT COLUMN: Images -->
+                <section class="right-column">
+                    <div class="image-showcase">
+                        {production.data.smurl ? (
+                            <a href={production.data.smurl}>
+                                <img src={production.data.thumbnail} alt={production.data.title} class="cropped-framed-image" />
+                            </a>
+                        ) : (
+                            <img src={production.data.thumbnail} alt={production.data.title} class="cropped-framed-image" />
+                        )}
+                    </div>
+
+                    <!-- Conditional Other Pictures Block -->
+                    {production.data.otherImages && production.data.otherImages.length > 0 && (
+                        <div class="other-pictures-section">
+                            <h3 class="section-headingo" style="font-size: 30px; margin-top: 40px; margin-bottom: 20px; text-align: right;">Other Pictures</h3>
+                            
+                            {production.data.otherImages.map((imgUrl) => (
+                                <img src={imgUrl} alt="Additional visual" class="cropped-framed-image-for-losers extra-image" />
+                            ))}
+                        </div>
+                    )}
+                </section>
+            </main>
+
+
+
+            <slot />
+        </div>
+        <Footer />
+    </div>
+</body>
+</html>
+
+
+
+<style define:vars={{ 
+    bgImage: `url(${bg})`, 
+    fontUrl: `url(${fonturl})`, 
+    fontName,
+    colorint
+}}>
+@font-face {
+    font-family: var(--fontName);
+    src: var(--fontUrl) format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-image: var(--bgImage);
+    background-attachment: fixed;
+    background-size: 100%;
+    /* Falls back to sans-serif if the custom font fails to load */
+    font-family: var(--fontName), sans-serif; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Container for the whole page below the navbar */
+.layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+/* --- HEADER ALIGNMENT --- */
+.main-header {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.site-title {
+  display: inline-block; /* Allows the underline to wrap exactly to the text width */
+  border-bottom: 4px solid black; 
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 50px
+}
+
+.site-subtitle {
+    margin-top: 10px
+}
+
+/* --- MIDDLE SECTION ALIGNMENT (TEXT LEFT, IMAGE RIGHT) --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+  gap: 40px; /* Space between the text and the image */
+  align-items: start;
+}
+
+/* --- AUTOMATIC IMAGE CROPPING & FRAMING --- */
+.cropped-framed-image {
+  width: 100%;
+  max-width: 550px; 
+  
+  /* You mentioned 3:4, but the reference "proyectlyaotuhowww.jpg" shows a landscape image. 
+     I set it to 4/3 (landscape). If you want it taller (portrait), simply change this to 3 / 4 */
+  aspect-ratio: 4 / 3; 
+  
+  /* THIS IS THE SECRET SAUCE: It forces the image to fill the aspect-ratio box and crops the overflow, never stretching it */
+  object-fit: cover; 
+  
+  /* The thick white frame matching your reference image[cite: 1] */
+  border: 15px solid white;
+  
+  /* Optional: Adds a slight drop-shadow just like in your screenshot[cite: 1] */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); 
+  
+  /* Pushes the image nicely to the right side of its container */
+  margin-left: auto;
+  display: block;
+}
+
+.cropped-framed-image-for-losers {
+  width: 100%;
+  max-width: 400px; 
+  
+  /* You mentioned 3:4, but the reference "proyectlyaotuhowww.jpg" shows a landscape image. 
+     I set it to 4/3 (landscape). If you want it taller (portrait), simply change this to 3 / 4 */
+  aspect-ratio: 4 / 3; 
+  
+  /* THIS IS THE SECRET SAUCE: It forces the image to fill the aspect-ratio box and crops the overflow, never stretching it */
+  object-fit: cover; 
+  
+  /* The thick white frame matching your reference image[cite: 1] */
+  border: 15px solid white;
+  
+  /* Optional: Adds a slight drop-shadow just like in your screenshot[cite: 1] */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); 
+  
+  /* Pushes the image nicely to the right side of its container */
+  margin-left: auto;
+  display: block;
+}
+
+/* --- BOTTOM SECTION ALIGNMENT --- */
+.bottom-section {
+  margin-top: 60px;
+}
+
+.link-list {
+  list-style-type: none; /* Removes default HTML bullets so you can use your custom dashes */
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.meta-data {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 24px;
+}
+
+.description-title {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
+.description-text {
+    margin-top: 0px;
+    font-size: 24px
+}
+
+.section-headingo {
+    color: var(--colorint);
+    font-size: 40px;
+    margin-bottom: 0px
+}
+
+.section-headinga {
+    color: var(--colorint);
+    font-size: 40px
+}
+
+.blog-link {
+    color: var(--colorint)
+}
+
+h1 {
+    color: var(--colorint)
+}
+
+h2 {
+    color: var(--colorint)
+}
+
+h3 {
+    color: var(--colorint)
+}
+
+p {
+    color: var(--colorint)
+}
+
+  .status.finished { color: #0e63ff; }
+  .status.current { color: #a723ff; }
+  .status.future { color: #0bff2c; }
+  .status.cancelled { color: #ff3d3d; }
+  .status.paused { color: #b6e7ff; }
+
+.extra-image {
+    margin-bottom: 30px; /* Space between multiple extra pictures */
+}
+
+</style>

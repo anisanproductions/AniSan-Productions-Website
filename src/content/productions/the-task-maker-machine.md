@@ -4,8 +4,7 @@ description: "A code in Python. Enjoyyy"
 date: 06-15-2023
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Programming"
+mainInterest: "Programming"
 secondaryInterests:
     - "English"
 url: "/productions/TasksMakerMachine.zip"

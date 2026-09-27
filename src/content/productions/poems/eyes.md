@@ -3,8 +3,7 @@ title: "eyes"
 date: 6-9-2026
 type: "artifact"
 status: "finished"
-mainInterests:
-    - "Poetry"
+mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/44"
