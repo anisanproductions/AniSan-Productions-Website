@@ -6,7 +6,7 @@ const productions = await getCollection('productions');
 
 const mainProjects = productions
   .filter(item => item.data.type === 'project' &&
-  item.data.mainInterests.includes('Piano'))
+  item.data.mainInterest === 'Piano')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const secondaryProjects = productions
@@ -16,7 +16,7 @@ const secondaryProjects = productions
 
 const artifacts = productions
   .filter(item => item.data.type === 'artifact' &&
-    (item.data.mainInterests.includes('Piano') ||
+    (item.data.mainInterest === 'Piano' ||
     item.data.secondaryInterests.includes('Piano')))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
