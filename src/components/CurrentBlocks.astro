@@ -33,14 +33,16 @@ const interestUrls: Record<string, string> = {
 ---
 
 <div class="current-block">
-  {production.data.thumbnail && (
-    <div class="thumbnail">
-      <img
-        src={production.data.thumbnail}
-        alt={production.data.title}
-      />
-    </div>
-  )}
+  <a href = {production.data.url}>
+    {production.data.thumbnail && (
+      <div class="thumbnail">
+        <img
+          src={production.data.thumbnail}
+          alt={production.data.title}
+        />
+      </div>
+    )}
+  </a>
 
   <div class="block-info">
 
