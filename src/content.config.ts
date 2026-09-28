@@ -47,6 +47,18 @@ const productions = defineCollection({
   }),
 });
 
+const now = defineCollection({
+  loader: glob({
+    pattern: '**/now.md',
+    base: './src/content',
+  }),
+
+  schema: z.object({
+    lastdate: z.coerce.date(),
+  }),
+});
+
 export const collections = {
   productions,
+  now,
 };

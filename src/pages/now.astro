@@ -1,0 +1,132 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import banner from '../assets/banners/nowbanner.png';
+
+import { getCollection, getEntry, render } from 'astro:content';
+
+const nowprod = await getCollection('now');
+
+---
+
+<MainLayout title="AniSan Productions | Now">
+
+    <!-- HERO -->
+    <div class="hero">
+        <img src={banner.src} class="banner">
+    </div>
+
+    <div class="static-text">
+        <p class="date-text"><i>LAST UPDATED: {nowprod[0].data.lastdate.toLocaleDateString()}</i></p>
+        <p class="funny-text"><strong>HI THERE FRIEND. </strong>Looks like we haven’t met in a year, huh… HERE’S ALL THE STUFF I’VE BEEN UP TO:</p>
+    </div>
+
+    <div class="now-text">
+    {
+        nowprod.map(async (now, index) => {
+      // Get the compiled markdown content
+      const { Content } = await render(now);
+      return (
+            <Content />
+            );
+        })
+    } 
+    </div>
+
+
+</MainLayout>
+
+<style>
+  @font-face {
+    font-family: 'Aptos';
+    src: url("../assets/fonts/Aptos.ttf") format('truetype');
+  }
+
+.static-text {
+    font-family: 'Aptos', sans-serif;
+    color: white;
+    font-size: 23px;
+    margin-bottom: 30px;
+    margin-top: 0px
+}
+.hero {
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.funny-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.date-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.now-text {
+    font-family: 'Aptos', sans-serif;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 0px
+}
+
+.banner {
+    width: 100%;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-text .small {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.hero-text .big {
+    font-size: 42px;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.main-image {
+    width: 450px;
+    border: 8px solid #cfcfcf;
+}
+
+.text {
+    max-width: 500px;
+    color: white;
+    font-size: 24px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center; /* Centers the whole row */
+  align-items: center;
+  gap: 10px;               /* Adds equal spacing between each image */
+  margin-top: 40px;        /* Pushes the row down from the hero banner */
+  padding: 0 20px;         /* Prevents images from touching screen edges */
+}
+
+.image-row img {
+  width: 100%;
+  height: auto;
+}
+</style>
