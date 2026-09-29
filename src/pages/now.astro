@@ -73,19 +73,20 @@ const nowprod = await getCollection('now');
     margin-top: 0px
 }
 
-a, a:link{
+.now-text :global(a), 
+.now-text :global(a:link) {
     color: white;
 }
 
-a:visited {
+.now-text :global(a:visited) {
     color: rgb(206, 245, 255);
 }
 
-a:hover {
+.now-text :global(a:hover) {
     color: rgb(109, 197, 255);
 }
 
-a:active {
+.now-text :global(a:active) {
     color: rgb(0, 140, 255);
 }
 
@@ -145,4 +146,20 @@ a:active {
   width: 100%;
   height: auto;
 }
+</style>
+
+<style is:global>
+    .now-text a, 
+    .now-text a:link {
+        color: white;
+    }
+    .now-text a:visited {
+        color: rgb(206, 245, 255);
+    }
+    .now-text a:hover {
+        color: rgb(109, 197, 255);
+    }
+    .now-text a:active {
+        color: rgb(0, 140, 255);
+    }
 </style>
