@@ -1,6 +1,6 @@
 ---
 title: "DEBUT"
-description: "They were originally random pieces, but then I grouped them together because why not (jk it was because they looked messy in the All Productions page). Also DEBUT is misleading; these aren't the first compositions I made, but whatever. Also don't mind the guy to the right, he's chill."
+description: "They were originally random 'pieces', but then I grouped them together because why not (jk it was because they looked messy in the All Productions page). Also DEBUT is misleading; these aren't the first 'compositions' I made, but whatever. Also don't mind the guy to the right, he's chill."
 date: 08-26-2025
 type: "project"
 status: "finished"
