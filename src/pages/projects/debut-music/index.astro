@@ -1,0 +1,29 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProductionRow from '../../../components/ProductionRow.astro';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+// 1. Fetch the specific production entry for this page
+const production = await getEntry('productions', 'debut');
+
+// Optional safety check if entry isn't found
+if (!production) {
+  throw new Error("Production 'debut' not found.");
+}
+
+// Import the specific assets for this particular interest
+import debBg from '../../../assets/projectbackgrounds/debutbackground.png';
+import debFont from '../../../assets/fonts/bradhitc.ttf';
+---
+
+<!-- 2. Pass `production` to ProjectLayout as a prop -->
+<ProjectLayout 
+    title="DEBUT | AniSan Productions" 
+    bg={debBg.src} 
+    fonturl={debFont} 
+    fontName="Bradley Hand ITC"
+    colorint="black"
+    production={production}
+>
+
+</ProjectLayout>
