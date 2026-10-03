@@ -1,14 +1,18 @@
 ---
-lastdate: 09-30-2026
+lastdate: 10-3-2026
 ---
 
 # TODAY
-- I'm [calling all interests.](https://anisanproductions.blogspot.com/2026/09/calling-all-interests.html)
-- Learning how to fight procrastination and to sneak my stuff in random empty time slots in my schedule.
+- I'll be back on Monday... this big event has not let me do anything else... 
+and... are my priorities well-aligned and well-positioned? I don't know...
 
 ---
 
 # PAST NOW'S
+
+## 9/30/2026
+- I'm [calling all interests.](https://anisanproductions.blogspot.com/2026/09/calling-all-interests.html)
+- Learning how to fight procrastination and to sneak my stuff in random empty time slots in my schedule.
 
 ## 9/29/2026
 - My website (this website) is ~~partly~~ finished!!
