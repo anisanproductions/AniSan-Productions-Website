@@ -1,14 +1,16 @@
 ---
-lastdate: 10-3-2026
+lastdate: 10-5-2026
 ---
 
 # TODAY
-- I'll be back on Monday... this big event has not let me do anything else... 
-and... are my priorities well-aligned and well-positioned? I don't know...
+- Ok, everything is back to normal, I will return to my interests.
+- Uploaded a [Violin recording of Oskar Rieding Op. 35 Mov I.](https://anisanproductions.com/productions/oskar-rieding-1.mp3)
 
 ---
 
 # PAST NOW'S
+## 10/3/2026
+- I'll be back on Monday... this big event has not let me do anything else... and... are my priorities well-aligned and well-positioned? I don't know...
 
 ## 9/30/2026
 - I'm [calling all interests.](https://anisanproductions.blogspot.com/2026/09/calling-all-interests.html)
