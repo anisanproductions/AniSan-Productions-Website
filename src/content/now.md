@@ -3,7 +3,7 @@ lastdate: 10-5-2026
 ---
 
 # TODAY
-- Ok, everything is back to normal, I will return to my interests.
+- Ok, everything is back to normal, I will return to my interests... hopefully..
 - Uploaded a [Violin recording of Oskar Rieding Op. 35 Mov I.](https://anisanproductions.com/productions/oskar-rieding-1.mp3)
 
 ---
