@@ -5,5 +5,5 @@ date: 02-13-2026
 type: "artifact"
 status: "finished"
 mainInterest: "Blender"
-url: "/productions/furniture.blend"
+url: "/productions/furnitureshelf.png"
 ---

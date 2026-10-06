@@ -1,14 +1,17 @@
 ---
-lastdate: 10-5-2026
+lastdate: 10-6-2026
 ---
 
 # TODAY
-- Ok, everything is back to normal, I will return to my interests... hopefully..
-- Uploaded a [Violin recording of Oskar Rieding Op. 35 Mov I.](https://anisanproductions.com/productions/oskar-rieding-1.mp3)
+- I hope my busy-ness won't disturb me too much today... anyway I uploaded/will upload older stuff and newer stuf. oki bye 
 
 ---
 
 # PAST NOW'S
+## 10/3/2026
+- Ok, everything is back to normal, I will return to my interests... hopefully..
+- Uploaded a [Violin recording of Oskar Rieding Op. 35 Mov I.](https://anisanproductions.com/productions/oskar-rieding-1.mp3)
+
 ## 10/3/2026
 - I'll be back on Monday... this big event has not let me do anything else... and... are my priorities well-aligned and well-positioned? I don't know...
 
