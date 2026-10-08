@@ -1,5 +1,5 @@
 ---
-title: "La ventana"
+title: "La Ventana"
 date: 10-07-2026
 type: "artifact"
 status: "finished"
