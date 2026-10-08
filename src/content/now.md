@@ -1,13 +1,17 @@
 ---
-lastdate: 10-7-2026
+lastdate: 10-8-2026
 ---
 
 # TODAY
-- I'M AGAINST TIME UUUHHH, I TRAVELED AND NOW I HAVE SOME MORE STUFF BUT THEY DON'T LET ME UPLOAD IT
+- I can't believe I only get to be with my interests at "random" times, coincidences... I could live my life, all time slots and free time, with just school and community because of how demanding they are... but then where will [they](https://anisanproductions.com/productions/intereses.jpg) live?
+- HOORAY [WRITING HAS COME BACK](https://anisanproductions.com/projects/letters-to-rachel). well I mean, it's NOT like I've let 3 whole years pass without writing anything new aside... [*that*](https://anisanproductions.com/productions/weatheriends.pdf)... it's just ALL the other stuff is either lost, embarrasing, destroyed by me or my mother, or too demanding for my laziness to upload it here (after all, this website is for stuff I'm doing NOW and onwards, not just an archive of the past). So, for now let's CeLeBrAte the return of my dear [Writing 💖](ttps://anisanproductions.com/interests/escritura). ALL MY INTERESTS WILL BE BACK TOO, JUST YOU WAIT.
 
 ---
 
 # PAST NOW'S
+## 10/7/2026
+- I'M AGAINST TIME UUUHHH, I TRAVELED AND NOW I HAVE SOME MORE STUFF BUT THEY DON'T LET ME UPLOAD IT
+
 ## 10/6/2026
 - I hope my busy-ness won't disturb me too much today... anyway I uploaded/will upload older stuff and newer stuf. oki bye 
 

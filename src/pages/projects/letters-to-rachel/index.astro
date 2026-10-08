@@ -1,0 +1,29 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProductionRow from '../../../components/ProductionRow.astro';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+// 1. Fetch the specific production entry for this page
+const production = await getEntry('productions', 'letters-to-rachel');
+
+// Optional safety check if entry isn't found
+if (!production) {
+  throw new Error("Production 'letters-to-rachel' not found.");
+}
+
+// Import the specific assets for this particular interest
+import rachBg from '../../../assets/projectbackgrounds/rachelbackground.png';
+import rachFont from '../../../assets/fonts/mvboli.ttf';
+---
+
+<!-- 2. Pass `production` to ProjectLayout as a prop -->
+<ProjectLayout 
+    title="Letters to Rachel | AniSan Productions" 
+    bg={rachBg.src} 
+    fonturl={rachFont} 
+    fontName="MV Boli"
+    colorint="white"
+    production={production}
+>
+
+</ProjectLayout>
