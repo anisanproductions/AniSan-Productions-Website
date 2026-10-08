@@ -4,6 +4,8 @@ date: 10-07-2026
 type: "artifact"
 status: "finished"
 mainInterest: "Poetry"
+secondaryInterests:
+    - "English"
 url: "/poems/48"
 project: "El Sonido del Silencio"
 ---
