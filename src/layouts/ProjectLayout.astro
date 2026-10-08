@@ -223,11 +223,13 @@ body {
 
 .site-title {
   display: inline-block; /* Allows the underline to wrap exactly to the text width */
-  border-bottom: 4px solid black; 
+  /* border-bottom: 4px solid black; <-- Remove this */
   margin-bottom: 0px;
   margin-top: 0px;
   font-size: 50px;
-  text-decoration-color: var(--colorint);
+  text-decoration: underline; /* Add this */
+  text-decoration-thickness: 4px; /* Matches your old border thickness */
+  text-decoration-color: var(--colorint); 
 }
 
 .site-subtitle {
