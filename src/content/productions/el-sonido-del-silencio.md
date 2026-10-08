@@ -1,7 +1,7 @@
 ---
 title: "El Sonido del Silencio"
 description: "Mi primer poemario."
-date: 10-13-2025
+date: 10-07-2026
 type: "project"
 status: "current"
 mainInterest: "Poetry"

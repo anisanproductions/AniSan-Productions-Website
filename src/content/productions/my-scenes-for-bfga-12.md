@@ -7,6 +7,7 @@ status: "finished"
 mainInterest: "Animation"
 secondaryInterests:
     - "English"
+    - "Blender"
 url: "/productions/my-scenes-for-bfga-12.mp4"
 ---
 
