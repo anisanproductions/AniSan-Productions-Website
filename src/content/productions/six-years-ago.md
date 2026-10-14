@@ -11,7 +11,7 @@ secondaryInterests:
     - "Composition"
     - "Drawing"
     - "English"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "six years ago..."

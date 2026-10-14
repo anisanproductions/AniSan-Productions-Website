@@ -9,7 +9,7 @@ secondaryInterests:
     - "Editing"
     - "Violin"
     - "Piano"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "OVERMINDED"

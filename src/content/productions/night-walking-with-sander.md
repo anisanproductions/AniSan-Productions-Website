@@ -9,7 +9,7 @@ secondaryInterests:
     - "Composition"
     - "Writing"
     - "English"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Night Walking with Sander"

@@ -7,7 +7,7 @@ status: "future"
 mainInterest: "Piano"
 secondaryInterests:
     - "Violin"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Sad Romance"

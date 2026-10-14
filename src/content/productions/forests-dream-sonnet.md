@@ -9,7 +9,7 @@ secondaryInterests:
     - "Poetry"
     - "Drawing"
     - "English"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Forest's Dream Sonnet"

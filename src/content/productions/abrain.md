@@ -8,7 +8,7 @@ mainInterest: "Animation"
 secondaryInterests:
     - "Writing"
     - "Composition"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "ABrain"

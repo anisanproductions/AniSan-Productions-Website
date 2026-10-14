@@ -5,7 +5,7 @@ date: 10-14-2026
 type: "project"
 status: "future"
 mainInterest: "Writing"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Prompted Writings"

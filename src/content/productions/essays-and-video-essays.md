@@ -7,7 +7,7 @@ status: "future"
 mainInterest: "English"
 secondaryInterests:
     - "Writing"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Essays and Video Essays"

@@ -7,7 +7,7 @@ status: "future"
 mainInterest: "Violin"
 seecondaryInterests:
     - "Editing"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Suzuki Violin Books Recordings"

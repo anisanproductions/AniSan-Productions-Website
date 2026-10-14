@@ -8,7 +8,7 @@ mainInterest: "Composition"
 secondaryInterests:
     - "Violin"
     - "Piano"
-url: "/projects/notice.png"
+url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
     - "Classical Compositions"
