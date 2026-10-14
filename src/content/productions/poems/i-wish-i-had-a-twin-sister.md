@@ -7,7 +7,8 @@ mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/41"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 I wish I had a twin sister

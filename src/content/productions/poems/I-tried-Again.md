@@ -7,7 +7,8 @@ mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/46"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 I'm just a dream

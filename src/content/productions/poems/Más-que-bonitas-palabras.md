@@ -5,7 +5,8 @@ type: "artifact"
 status: "finished"
 mainInterest: "Poetry"
 url: "/poems/47"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 Más que bonitas palabras

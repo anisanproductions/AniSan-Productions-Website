@@ -7,7 +7,8 @@ mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/31"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 it was a thing of everyday

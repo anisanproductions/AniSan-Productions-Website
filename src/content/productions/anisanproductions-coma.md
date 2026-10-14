@@ -6,5 +6,6 @@ type: "artifact"
 status: "finished"
 mainInterest: "Programming"
 url: "/"
-project: "anisanproductions.com"
+project:
+    - "anisanproductions.com"
 ---

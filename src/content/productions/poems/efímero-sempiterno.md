@@ -5,7 +5,8 @@ type: "artifact"
 status: "finished"
 mainInterest: "Poetry"
 url: "/poems/21"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 En el amanecer de cada día,

@@ -7,7 +7,8 @@ mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/34"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 I once called a friend of mine

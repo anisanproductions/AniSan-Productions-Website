@@ -7,6 +7,7 @@ status: "finished"
 mainInterest: "Composition"
 url: "/projects/debut-music"
 thumbnail: "/projectthumbnails/debuto.png"
-project: "DEBUT"
+project:
+    - "DEBUT"
 blog: "https://anisanproductions.blogspot.com/2025/10/debut-mi-primer-album-musical.html"
 ---

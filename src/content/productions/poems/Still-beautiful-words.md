@@ -7,7 +7,8 @@ mainInterest: "Poetry"
 secondaryInterests:
     - "English"
 url: "/poems/48"
-project: "El Sonido del Silencio"
+project:
+    - "El Sonido del Silencio"
 ---
 
 More than beautiful words

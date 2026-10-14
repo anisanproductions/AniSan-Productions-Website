@@ -39,7 +39,9 @@ const productions = defineCollection({
 
     thumbnail: z.string().optional(),
 
-    project: z.string().optional(),
+    project: z.array(
+      z.string().optional()
+    ).default([]),
 
     blog: z.string().optional(),
 

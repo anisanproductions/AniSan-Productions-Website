@@ -6,5 +6,6 @@ type: "artifact"
 status: "finished"
 mainInterest: "Composition"
 url: "/productions/Confusion.mp3"
-project: "DEBUT"
+project:
+    - "DEBUT"
 ---

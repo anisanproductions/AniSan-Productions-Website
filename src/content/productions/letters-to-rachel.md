@@ -9,6 +9,7 @@ secondaryInterests:
     - "English"
 url: "/projects/letters-to-rachel"
 thumbnail: "/projectthumbnails/dscn1768.jpg"
-project: "Letters to Rachel"
+project:
+    - "Letters to Rachel"
 blog: "https://anisanproductions.blogspot.com/search/label/Letters%20to%20Rachel"
 ---

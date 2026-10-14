@@ -14,8 +14,18 @@ import ProductionRow from '../components/ProductionRow.astro';
 const productions = await getCollection('productions');
 
 // 2. Fixed syntax: Removed internal `{}` around production.data.project
+//const projectArtifacts = productions
+//  .filter(item => item.data.project === production.data.project && item.data.type === 'artifact')
+//  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const currentProjects = production.data.project || [];
+
 const projectArtifacts = productions
-  .filter(item => item.data.project === production.data.project && item.data.type === 'artifact')
+  .filter(item => 
+    item.data.type === 'artifact' && 
+    item.data.project && 
+    item.data.project.some(p => currentProjects.includes(p))
+  )
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const formatMap = {
@@ -223,13 +233,13 @@ body {
 
 .site-title {
   display: inline-block; /* Allows the underline to wrap exactly to the text width */
-  /* border-bottom: 4px solid black; <-- Remove this */
+  border-bottom: 4px solid var(--colorint);
   margin-bottom: 0px;
   margin-top: 0px;
   font-size: 50px;
-  text-decoration: underline; /* Add this */
-  text-decoration-thickness: 4px; /* Matches your old border thickness */
-  text-decoration-color: var(--colorint); 
+  /* text-decoration: underline;
+  text-decoration-thickness: 3px; 
+  text-decoration-color: var(--colorint); */
 }
 
 .site-subtitle {

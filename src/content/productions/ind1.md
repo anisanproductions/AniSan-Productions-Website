@@ -6,5 +6,6 @@ type: "artifact"
 status: "finished"
 mainInterest: "Animation"
 url: "/productions/IND_1.mp4"
-project: "Independencia de América"
+project:
+    - "Independencia de América"
 ---

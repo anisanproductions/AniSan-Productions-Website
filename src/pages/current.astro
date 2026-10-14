@@ -11,7 +11,7 @@ import CurrentBlocks from '../components/CurrentBlocks.astro';
 
 const currentThings = productions
   .filter(production => {
-  const isArtifactWithProject = production.data.type === 'artifact' && production.data.project;
+  const isArtifactWithProject = production.data.type === 'artifact' && production.data.project && production.data.project.length > 0;
   return production.data.status === 'current' && !isArtifactWithProject; 
 })
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());

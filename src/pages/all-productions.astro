@@ -10,7 +10,7 @@ const productions = await getCollection('productions');
 
 const allproductions = productions
    .filter((prod) => {
-    const isArtifactWithProject = prod.data.type === 'artifact' && prod.data.project;
+    const isArtifactWithProject = prod.data.type === 'artifact' && prod.data.project && prod.data.project.length > 0;
     return !isArtifactWithProject; 
   })
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());

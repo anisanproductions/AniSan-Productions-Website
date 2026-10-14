@@ -7,6 +7,7 @@ status: "finished"
 mainInterest: "Programming"
 url: "/projects/anisanproductions.com"
 thumbnail: "/projectthumbnails/picture.png"
-project: "anisanproductions.com"
+project:
+    - "anisanproductions.com"
 blog: "https://anisanproductions.blogspot.com/search/label/anisanproductions.com"
 ---
