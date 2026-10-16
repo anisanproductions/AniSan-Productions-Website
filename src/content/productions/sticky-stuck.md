@@ -1,6 +1,6 @@
 ---
 title: "sticky stuck in backroom"
-description: "idk"
+description: "stick"
 date: 10-14-2026
 type: "artifact"
 status: "future"
