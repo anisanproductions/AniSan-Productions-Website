@@ -2,7 +2,7 @@
 title: "Sad Romance Recording"
 description: "I DESPERATELY want to learn this peak, emotional piece in both of my instruments... can't believe it's just a meme symbol..."
 date: 10-14-2026
-type: "project"
+type: "artifact"
 status: "future"
 mainInterest: "Piano"
 secondaryInterests:
