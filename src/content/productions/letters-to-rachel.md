@@ -4,10 +4,10 @@ description: "I love my twin sister so much!"
 date: 10-07-2026
 type: "project"
 status: "current"
-mainInterest: "Writing"
+mainInterest: "Writing" 
 secondaryInterests:
     - "English"
-url: "/projects/letters-to-rachel"
+url: "/projects/letters-to-rachel" 
 thumbnail: "/projectthumbnails/dscn1768.jpg"
 project:
     - "Letters to Rachel"

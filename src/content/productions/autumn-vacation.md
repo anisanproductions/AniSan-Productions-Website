@@ -1,5 +1,5 @@
 ---
-title: "Winter Vacation"
+title: "Autumn Vacation"
 description: "Short written story. The sole survivor of a plane crash meets a misterious, young girl living in the woods alone."
 date: 10-14-2026
 type: "project"
@@ -11,6 +11,6 @@ secondaryInterests:
 url: "/productions/notice.png"
 thumbnail: "/noimage.png"
 project:
-    - "Winter Vacation"
-blog: "https://anisanproductions.blogspot.com/search/label/Winter%20Vacation"
+    - "Autumn Vacation"
+blog: "https://anisanproductions.blogspot.com/search/label/Autumn%20Vacation"
 ---
