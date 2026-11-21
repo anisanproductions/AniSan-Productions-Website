@@ -1,6 +1,7 @@
 ---
-lastdate: 11-18-2026
+lastdate: 11-21-2026
 ---
 
 # TODAY
-- Look at that! I [published something](https://anisanproductions.com/productions/EnglishComicTest.pdf).
+- Made some changes.
+- Finishing this 2000-word essay...
