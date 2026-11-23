@@ -1,7 +1,6 @@
 ---
-lastdate: 11-21-2026
+lastdate: 11-23-2026
 ---
 
 # TODAY
-- Made some changes.
-- Finishing this 2000-word essay...
+- [I FINISHED THAT ESSAY LET'S GOOOO](https://anisanproductions.com/productions/The-Pursuit-of-Polymathy-Essay.pdf)
