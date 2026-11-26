@@ -1,6 +1,6 @@
 ---
-lastdate: 11-23-2026
+lastdate: 11-26-2026
 ---
 
 # TODAY
-- [I FINISHED THAT ESSAY LET'S GOOOO](https://anisanproductions.com/productions/The-Pursuit-of-Polymathy-Essay.pdf)
+- what's the point
