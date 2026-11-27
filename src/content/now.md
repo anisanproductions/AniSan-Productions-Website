@@ -1,5 +1,5 @@
 ---
-lastdate: 11-26-2026
+lastdate: 11-27-2026
 ---
 
 # TODAY
