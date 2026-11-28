@@ -1,6 +1,6 @@
 ---
-lastdate: 11-27-2026
+lastdate: 11-28-2026
 ---
 
 # TODAY
-- what's the point
+- near the finish line...
